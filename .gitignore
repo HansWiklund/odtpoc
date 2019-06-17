@@ -1,0 +1,6 @@
+.project
+.mvn
+.settings
+/application/.classpath
+target
+.classpath
