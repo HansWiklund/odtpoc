@@ -12,6 +12,7 @@
     <modules>
         <module>core</module>
         <module>application</module>
+        <module>mock</module>
     </modules>
 
 </project>

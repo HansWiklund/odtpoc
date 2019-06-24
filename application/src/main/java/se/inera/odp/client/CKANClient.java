@@ -10,11 +10,11 @@ import org.springframework.web.client.RestTemplate;
 public class CKANClient {
 
 	// URL for creating a new datastore in CKAN
-	@Value("${ckan.datastore.create.url}")
+	@Value("${ckan.datastore.url}/action/datastore_create")
 	private String CKAN_DATASTORE_CREATE_URL;
 		
 	// URL for deleting a resource from CKAN
-	@Value("${ckan.resource.delete.url}")
+	@Value("${ckan.datastore.url}/action/resource_delete?id=")
 	private String CKAN_RESOURCE_DELETE_URL;
 			
 	// The maximum number of posts to retrieve from a CKAN resource in one single request.
@@ -22,15 +22,15 @@ public class CKANClient {
 	private String CKAN_DATASTORE_SEARCH_LIMIT;
 	
 	// URL for searching CKAN's datastore
-	@Value("${ckan.datastore.search.url}")
+	@Value("${ckan.datastore.url}/action/datastore_search?id={id}&limit={limit}")
 	private String CKAN_DATASTORE_SEARCH_URL;
 		
 	// URL for updating a datastore in CKAN
-	@Value("${ckan.datastore.update.url}")
+	@Value("${ckan.datastore.url}/action/datastore_upsert")
 	private String CKAN_DATASTORE_UPDATE_URL;
 		
 	// URL used for displaying files in a certain dataset in CKAN
-	@Value("${ckan.datastore.url}/action/package_show?id=")
+	@Value("${ckan.datastore.url}/action/package_show?id={id}&limit={limit}")
 	private String CKAN_PACKAGE_SHOW_URL;
 		
 		
@@ -41,13 +41,13 @@ public class CKANClient {
 	public ResponseEntity<String> getResource(String id) {
 		if(id == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_PACKAGE_SHOW_URL + id, String.class);
+		return restTemplate.getForEntity(CKAN_PACKAGE_SHOW_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
 	public ResponseEntity<String> getData(String id) {
 		if(id == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL + "?id=" + id, String.class);
+		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
 	// TODO:

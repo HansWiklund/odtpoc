@@ -20,8 +20,11 @@ public class ODPController {
 	@GetMapping("/{id}")
 	public ResponseEntity<String> getDataById(@PathVariable String id) {
 
-		ResponseEntity<String> data = ckanService.getDataById(id);
-		return data;
+		String result = ckanService.getDataById(id);
+		if(result == null)
+			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
+		else
+			return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
 	@PostMapping()
