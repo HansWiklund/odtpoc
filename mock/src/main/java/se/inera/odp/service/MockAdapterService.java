@@ -3,6 +3,8 @@ package se.inera.odp.service;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import opendata.followup.groupoutcomes.qualitymeasures._2.*;
 import se.inera.odp.client.AdapterClient;
+import se.inera.odp.exception.ODPException;
 import se.inera.odp.request.ODPRequest;
 
 @Service
 public class MockAdapterService {
+
+	Logger logger = LoggerFactory.getLogger(MockAdapterService.class);
 
 	@Autowired
 	AdapterClient adapterClient;
@@ -31,8 +36,7 @@ public class MockAdapterService {
 			req.setRecords(data.getCode());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -44,8 +48,7 @@ public class MockAdapterService {
 			req.setRecords(data.getCodeSystem());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -57,8 +60,7 @@ public class MockAdapterService {
 			req.setRecords(data.getMeasure());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -70,8 +72,7 @@ public class MockAdapterService {
 			req.setRecords(data.getMeasureFormerVersion());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -83,8 +84,7 @@ public class MockAdapterService {
 			req.setRecords(data.getTargetMeasurement());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -96,8 +96,7 @@ public class MockAdapterService {
 			req.setRecords(data.getPerformingOrganization());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -109,8 +108,7 @@ public class MockAdapterService {
 			req.setRecords(data.getValueSet());
 			adapterClient.createResource(req,ODPRequest.class);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
@@ -125,8 +123,7 @@ public class MockAdapterService {
 			req.getRecords().add(new CodeType());
 			System.out.println(om.writeValueAsString(req));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 
 	}

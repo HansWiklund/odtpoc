@@ -1,11 +1,12 @@
 package se.inera.odp.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import se.inera.odp.request.ODPRequest;
 import se.inera.odp.service.CKANService;
 
 // @RequestMapping(value = "/greeting", method = POST, consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -13,6 +14,8 @@ import se.inera.odp.service.CKANService;
 @RestController
 @RequestMapping({"/api"})
 public class ODPController {
+
+	Logger logger = LoggerFactory.getLogger(ODPController.class);
 
 	@Autowired
 	CKANService ckanService;
@@ -29,8 +32,14 @@ public class ODPController {
 	
 	@PostMapping("/save")
 	public ResponseEntity<?> createData(@RequestBody String data) {
-		//TODO
-		ckanService.saveResource(data);
-		return ResponseEntity.status(HttpStatus.CREATED).body(null);
+
+		try {
+			ckanService.saveResource(data);
+			logger.info("Request was succesfully saved!");
+			return ResponseEntity.status(HttpStatus.CREATED).body(null);
+		} catch(Exception e) {
+			logger.error("An error occured during save", e);
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+		}
 	}
 }
