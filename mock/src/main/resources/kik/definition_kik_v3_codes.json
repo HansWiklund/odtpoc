@@ -1,0 +1,37 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-codes",
+    "hash": "kik-v3-codes__"
+  },
+  "fields": [
+    {
+      "id": "id",
+      "type": "text"
+    },
+    {
+      "id": "codeId",
+      "type": "text"
+    },
+    {
+      "id": "displayName",
+      "type": "text"
+    },
+    {
+      "id": "codeSystemOID",
+      "type": "text"
+    },
+    {
+      "id": "definition",
+      "type": "text"
+    },
+    {
+      "id": "active",
+      "type": "bool"
+    }
+  ],
+  "primary_key": "id",
+  "always_strings": [
+    "codeId"
+  ]
+}

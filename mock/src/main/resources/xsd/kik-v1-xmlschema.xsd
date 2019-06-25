@@ -1,0 +1,318 @@
+<schema version="1.0" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="urn:opendata:followup:groupoutcomes:qualitymeasures:2"
+	targetNamespace="urn:opendata:followup:groupoutcomes:qualitymeasures:2">
+    <element name="measures">
+        <complexType>
+            <sequence>
+                <element name="measure" type="tns:MeasureType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="measure">
+        <complexType>
+            <complexContent>
+                <extension base="tns:MeasureType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="measureFormerVersions">
+        <complexType>
+            <sequence>
+                <element name="measureFormerVersion" type="tns:MeasureFormerVersionType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="measureFormerVersion">
+        <complexType>
+            <complexContent>
+                <extension base="tns:MeasureFormerVersionType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="performingOrganizations">
+        <complexType>
+            <sequence>
+                <element name="performingOrganization" type="tns:PerformingOrganizationType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="performingOrganization">
+        <complexType>
+            <complexContent>
+                <extension base="tns:PerformingOrganizationType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="valueSet">
+        <complexType>
+            <complexContent>
+                <extension base="tns:ValueSetType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="valueSets">
+        <complexType>
+            <sequence>
+                <element name="valueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="targetMeasurement">
+        <complexType>
+            <complexContent>
+                <extension base="tns:TargetMeasurementType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="targetMeasurements">
+        <complexType>
+            <sequence>
+                <element name="targetMeasurement" type="tns:TargetMeasurementType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="codeSystem">
+        <complexType>
+            <complexContent>
+                <extension base="tns:CodeSystemType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="codeSystems">
+        <complexType>
+            <sequence>
+                <element name="codeSystem" type="tns:CodeSystemType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <element name="code">
+        <complexType>
+            <complexContent>
+                <extension base="tns:CodeType"/>
+            </complexContent>
+        </complexType>
+    </element>
+    <element name="codes">
+        <complexType>
+            <sequence>
+                <element name="code" type="tns:CodeType" minOccurs="0" maxOccurs="unbounded" />
+            </sequence>
+        </complexType>
+    </element>
+    <simpleType name="PerformingOrganizationIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="PerformingOrganizationType">
+        <sequence>
+            <element name="performingOrganizationId" type="tns:PerformingOrganizationIdType" />
+            <element name="performingOrganizationHsaId" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="performingOrganizationName" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="performingOrganizationType" type="tns:CodingType" />
+            <element name="asOrganizationPartOf" type="tns:PerformingOrganizationType" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <simpleType name="MeasureIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="MeasureType">
+        <sequence>
+            <element name="measureId" type="tns:MeasureIdType" />
+            <element name="lastUpdated" type="dateTime" />
+            <element name="validFrom" type="date" />
+            <element name="validTo" type="date" minOccurs="0" maxOccurs="1" />
+            <element name="publiclyAvailableInformation" type="boolean" />
+            <element name="regionalIndicator" type="string" minOccurs="0" maxOccurs="unbounded" />
+            <element name="subCategoryDefinition" type="tns:SubCategoryDefinitionType" minOccurs="0" maxOccurs="1" />
+            <element name="parentMeasureDefinition" type="tns:ParentMeasureDefinitionType" minOccurs="0" maxOccurs="1" />
+            <element name="author" type="tns:AuthorType" />
+            <element name="authenticator" type="tns:AuthenticatorType" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="SubCategoryDefinitionType">
+        <sequence>
+            <element name="parentMeasureId" type="tns:MeasureIdType" />
+            <element name="subCategoryCode" type="tns:CodingType" minOccurs="1" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="ParentMeasureDefinitionType">
+        <sequence>
+            <element name="measureVersionNumberMajor" type="int" />
+            <element name="measureVersionNumberMinor" type="int" />
+            <element name="title" type="string" />
+            <element name="measureDefinition" type="string" />
+            <element name="description" type="string"  minOccurs="0" maxOccurs="1" />
+            <element name="descriptionSource" type="string" minOccurs="1" maxOccurs="unbounded" />
+            <element name="measureTypeCode" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measurementTypeCode" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measureGroupCode" type="tns:CodingType"  minOccurs="0" maxOccurs="unbounded" />
+            <element name="soughtValue" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="sourcesOfError" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="coverageCalculation" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="numeratorDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="numeratorInclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="numeratorExclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="denominatorDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="denominatorInclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="denominatorExclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="unit" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measurePopulationDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="measurePopulationInclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="measurePopulationExclusionValueSetId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="cohortDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="cohortInclusionValueSetsId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="cohortExclusionValueSetsId" type="tns:ValueSetIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="regionalAffinityCalculation" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="thresholdForViewing" type="int" />
+            <element name="measuringFrequency" type="tns:CodingType" minOccurs="1" maxOccurs="unbounded" />
+            <element name="organizationLevel" type="tns:CodingType" minOccurs="1" maxOccurs="unbounded" />
+            <element name="interpretationTextPersonell" type="string"  minOccurs="0" maxOccurs="1" />
+            <element name="interpretationTextPublic" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="availableReportingSystemHsaId" type="tns:HsaIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="serviceContractVersion" type="int" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <simpleType name="MeasureFormerVersionIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="MeasureFormerVersionType">
+        <sequence>
+            <element name="measureFormerVersionId" type="tns:MeasureFormerVersionIdType" />
+            <element name="measureId" type="tns:MeasureIdType" />
+            <element name="measureVersionNumberMajor" type="int" />
+            <element name="measureVersionNumberMinor" type="int" />
+            <element name="lastUpdated" type="dateTime" />
+            <element name="validFrom" type="date" />
+            <element name="validTo" type="date" minOccurs="0" maxOccurs="1" />
+            <element name="publiclyAvailableInformation" type="boolean" />
+            <element name="regionalIndicator" type="string" minOccurs="0" maxOccurs="unbounded" />
+            <element name="title" type="string" />
+            <element name="measureDefinition" type="string" />
+            <element name="description" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="descriptionSource" type="string" minOccurs="1" maxOccurs="unbounded" />
+            <element name="measureTypeCode" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measurementTypeCode" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measureGroupCode" type="tns:CodingType"  minOccurs="0" maxOccurs="unbounded" />
+            <element name="soughtValue" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="sourcesOfError" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="coverageCalculation" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="numeratorDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="numeratorInclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="numeratorExclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="denominatorDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="denominatorInclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="denominatorExclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="unit" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="measurePopulationDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="measurePopulationInclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="measurePopulationExclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="cohortDefinition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="cohortInclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="cohortExclusionValueSet" type="tns:ValueSetType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="regionalAffinityCalculation" type="tns:CodingType" minOccurs="0" maxOccurs="1" />
+            <element name="thresholdForViewing" type="int" />
+            <element name="measuringFrequency" type="tns:CodingType" minOccurs="1" maxOccurs="unbounded" />
+            <element name="organizationLevel" type="tns:CodingType" minOccurs="1" maxOccurs="unbounded" />
+            <element name="interpretationTextPersonell" type="string"  minOccurs="0" maxOccurs="1" />
+            <element name="interpretationTextPublic" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="availableReportingSystemHsaId" type="tns:HsaIdType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="serviceContractVersion" type="int" minOccurs="0" maxOccurs="1" />
+            <element name="author" type="tns:AuthorType" />
+            <element name="authenticator" type="tns:AuthenticatorType" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <simpleType name="ValueSetIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="ValueSetType">
+        <sequence>
+            <element name="valueSetId" type="tns:ValueSetIdType" />
+            <element name="name" type="string" />
+            <element name="active" type="boolean" />
+            <element name="codeInValueSet" type="tns:CodingType" minOccurs="0" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+    <complexType name="AuthorType">
+        <sequence>
+            <element name="authorName" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="authorRoleCode" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="authorOrganization" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="authorContactInformation" type="string" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <complexType name="AuthenticatorType">
+        <sequence>
+            <element name="authenticatorName" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="authenticatorRoleCode" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="authenticatorOrganization" type="string" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+    <simpleType name="TargetIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="TargetMeasurementType">
+        <sequence>
+            <element name="targetId" type="tns:TargetIdType" />
+            <element name="validFrom" type="date" />
+            <element name="validTo" type="date" minOccurs="0" maxOccurs="1" />
+            <element name="targetName" type="string" />
+            <element name="targetDescription" type="string" />
+            <element name="targetType" type="tns:CodingType" />
+            <element name="targetMeasureId" type="tns:MeasureIdType" />
+            <element name="targetOrganizationId" type="tns:PerformingOrganizationIdType" />
+            <element name="authoringOrganization" type="string" />
+            <element name="targetProportionMeasure" type="tns:TargetProportionMeasureType" minOccurs="0" maxOccurs="1" />
+            <element name="targetContinuousMeasure" type="tns:TargetContinuousMeasureType" minOccurs="0" maxOccurs="1" />
+            <element name="targetCohortMeasure" type="tns:TargetCohortMeasureType" minOccurs="0" maxOccurs="1" />
+            <element name="author" type="tns:AuthorType" />
+        </sequence>
+    </complexType>
+    <complexType name="TargetProportionMeasureType">
+        <sequence>
+            <element name="targetRate" type="double" />
+        </sequence>
+    </complexType>
+    <complexType name="TargetContinuousMeasureType">
+        <sequence>
+            <element name="targetValue" type="double" />
+        </sequence>
+    </complexType>
+    <complexType name="TargetCohortMeasureType">
+        <sequence>
+            <element name="targetCohort" type="double" />
+        </sequence>
+    </complexType>
+    <simpleType name="CodeSystemIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="CodeSystemType">
+        <sequence>
+            <element name="OID" type="tns:CodeSystemIdType" />
+            <element name="name" type="string" />
+            <element name="source" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="description" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="active" type="boolean" />
+        </sequence>
+    </complexType>
+    <simpleType name="CodeIdType">
+        <restriction base="string" />
+    </simpleType>
+    <complexType name="CodeType">
+        <sequence>
+            <element name="id" type="tns:CodeIdType" />
+            <element name="codeId" type="string" />
+            <element name="displayName" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="codeSystemOID" type="tns:CodeSystemIdType" />
+            <element name="definition" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="active" type="boolean" />
+        </sequence>
+    </complexType>
+    <complexType name="CodingType">
+        <sequence>
+            <element name="system" type="string" />
+            <element name="code" type="string" />
+        </sequence>
+    </complexType>
+    <simpleType name="HsaIdType">
+        <restriction base="string" />
+    </simpleType>
+</schema>

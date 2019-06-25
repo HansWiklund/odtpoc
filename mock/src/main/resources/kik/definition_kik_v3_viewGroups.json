@@ -1,0 +1,30 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-viewGroups",
+    "hash": "kik-v3-viewGroups__"
+  },
+  "fields": [
+    {
+      "id": "id",
+      "type": "text"
+    },
+    {
+      "id": "displayName",
+      "type": "text"
+    },
+    {
+      "id": "purposeDescription",
+      "type": "text"
+    },
+    {
+      "id": "measureReference",
+      "type": "json"
+    },
+    {
+      "id": "viewTemplateReferenceId",
+      "type": "text"
+    }
+  ],
+  "primary_key": "id"
+}

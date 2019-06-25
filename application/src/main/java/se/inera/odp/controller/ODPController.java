@@ -17,7 +17,7 @@ public class ODPController {
 	@Autowired
 	CKANService ckanService;
 	
-	@GetMapping("/{id}")
+	@GetMapping("/get/{id}")
 	public ResponseEntity<String> getDataById(@PathVariable String id) {
 
 		String result = ckanService.getDataById(id);
@@ -27,9 +27,10 @@ public class ODPController {
 			return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
-	@PostMapping()
-	public ResponseEntity<?> createData(@RequestBody ODPRequest data) {
+	@PostMapping("/save")
+	public ResponseEntity<?> createData(@RequestBody String data) {
 		//TODO
+		ckanService.saveData(data);
 		return ResponseEntity.status(HttpStatus.CREATED).body(null);
 	}
 }

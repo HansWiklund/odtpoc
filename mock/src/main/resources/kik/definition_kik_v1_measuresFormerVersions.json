@@ -1,0 +1,196 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v1-measureFormerVersions",
+    "hash": "kik-v1-measureFormerVersions__"
+  },
+  "fields": [
+    {
+      "id": "measureFormerVersionId",
+      "type": "text"
+    },
+    {
+      "id": "measureId",
+      "type": "text"
+    },
+    {
+      "id": "measureVersionNumberMajor",
+      "type": "int"
+    },
+    {
+      "id": "measureVersionNumberMinor",
+      "type": "int"
+    },
+    {
+      "id": "lastUpdated",
+      "type": "timestamp"
+    },
+    {
+      "id": "validFrom",
+      "type": "date"
+    },
+    {
+      "id": "validTo",
+      "type": "date"
+    },
+    {
+      "id": "publiclyAvailableInformation",
+      "type": "bool"
+    },
+    {
+      "id": "regionalIndicator",
+      "type": "text[]"
+    },
+    {
+      "id": "title",
+      "type": "text"
+    },
+    {
+      "id": "measureDefinition",
+      "type": "text"
+    },
+    {
+      "id": "description",
+      "type": "text"
+    },
+    {
+      "id": "descriptionSource",
+      "type": "text[]"
+    },
+    {
+      "id": "measureTypeCode",
+      "type": "json"
+    },
+    {
+      "id": "measurementTypeCode",
+      "type": "json"
+    },
+    {
+      "id": "measureGroupCode",
+      "type": "json"
+    },
+    {
+      "id": "soughtValue",
+      "type": "json"
+    },
+    {
+      "id": "sourcesOfError",
+      "type": "text"
+    },
+    {
+      "id": "coverageCalculation",
+      "type": "text"
+    },
+    {
+      "id": "numeratorDefinition",
+      "type": "text"
+    },
+    {
+      "id": "numeratorInclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "numeratorExclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "denominatorDefinition",
+      "type": "text"
+    },
+    {
+      "id": "denominatorInclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "denominatorExclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "unit",
+      "type": "json"
+    },
+    {
+      "id": "measurePopulationDefinition",
+      "type": "text"
+    },
+    {
+      "id": "measurePopulationInclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "measurePopulationExclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "cohortDefinition",
+      "type": "text"
+    },
+    {
+      "id": "cohortInclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "cohortExclusionValueSet",
+      "type": "json"
+    },
+    {
+      "id": "regionalAffinityCalculation",
+      "type": "json"
+    },
+    {
+      "id": "thresholdForViewing",
+      "type": "int"
+    },
+    {
+      "id": "measuringFrequency",
+      "type": "json"
+    },
+    {
+      "id": "organizationLevel",
+      "type": "json"
+    },
+    {
+      "id": "interpretationTextPersonell",
+      "type": "text"
+    },
+    {
+      "id": "interpretationTextPublic",
+      "type": "text"
+    },
+    {
+      "id": "availableReportingSystemHsaId",
+      "type": "text[]"
+    },
+    {
+      "id": "serviceContractVersion",
+      "type": "int"
+    },
+    {
+      "id": "author",
+      "type": "json"
+    },
+    {
+      "id": "authenticator",
+      "type": "json"
+    }
+  ],
+  "primary_key": "measureFormerVersionId",
+  "always_strings": [
+    "measureId"
+  ],
+  "always_arrays": [
+    "regionalIndicator",
+    "subCategoryCode",
+    "descriptionSource",
+    "measureGroupCode",
+    "denominatorInclusionValueSetId",
+    "denominatorExclusionValueSetId",
+    "numeratorInclusionValueSetId",
+    "numeratorExclusionValueSetId",
+    "measurePopulationInclusionValueSetId",
+    "measurePopulationExclusionValueSetId",
+    "measuringFrequency",
+    "organizationLevel",
+    "availableReportingSystemHsaId"
+  ]
+}
