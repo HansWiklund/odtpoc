@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import opendata.followup.groupoutcomes.qualitymeasures._2.CodeType;
-import opendata.followup.groupoutcomes.qualitymeasures._2.Codes;
+import opendata.followup.groupoutcomes.qualitymeasures._2.*;
 import se.inera.odp.client.AdapterClient;
 import se.inera.odp.request.ODPRequest;
 
@@ -24,7 +23,7 @@ public class MockAdapterService {
 
 	private static final String KIK_CODES_DEFINITION = "kik/definition_kik_v1_codes.json";
 	
-	public void saveDataById(Codes data) {	
+	public void saveResource(Codes data) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
@@ -35,7 +34,84 @@ public class MockAdapterService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+	}
+	
+	public void saveResource(CodeSystems data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<CodeSystemType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getCodeSystem());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveResource(Measures data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<MeasureType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getMeasure());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveResource(MeasureFormerVersions data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<MeasureFormerVersionType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getMeasureFormerVersion());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveResource(TargetMeasurements data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<TargetMeasurementType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getTargetMeasurement());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveResource(PerformingOrganizations data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<PerformingOrganizationType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getPerformingOrganization());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void saveResource(ValueSets data) {	
+		
+		try {
+			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
+			ODPRequest<ValueSetType> req = mapper.readValue(is, ODPRequest.class);
+			req.setRecords(data.getValueSet());
+			adapterClient.createResource(req,ODPRequest.class);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {

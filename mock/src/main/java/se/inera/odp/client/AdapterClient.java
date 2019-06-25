@@ -2,6 +2,7 @@ package se.inera.odp.client;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,9 +17,15 @@ public class AdapterClient {
 	@Autowired
 	RestTemplate restTemplate;
 
+	// Send data to ckan
 	public <T> void createResource(T data, Class clazz) {
 		restTemplate.postForEntity(SERVER_CREATE_URL, data, clazz);
 	}
 
-	
+	// TODO: Get data from producer
+	public ResponseEntity<String> getResource(String id) {
+		if(id == null)
+			return null;
+		return restTemplate.getForEntity("", String.class, id);
+	}	
 }
