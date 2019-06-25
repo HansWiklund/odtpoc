@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:codes xmlns:c="urn:opendata:followup:groupoutcomes:qualitymeasures:2">
+     <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Mage- och tarmsjukvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Mage- och tarmsjukvård</c:displayName>
+         <c:id>002b860b-e7cd-43e2-bb61-a8587d3712ea</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Målnivå Socialstyrelsen</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin målnivå Socialstyrelsen innefattar alla indikatorer som Socialstyrelsen har satt kvantifierade målnivåer för i sina nationella riktlinjer.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Målnivå Socialstyrelsen</c:displayName>
+         <c:id>01b26d6c-b20d-415f-9dc3-5527e5f599a9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>18-29</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>18 år till 29 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 18-29</c:displayName>
+         <c:id>05194124-6a05-44c3-b06d-3b6728a3a714</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Målnivå kvalitetsregister</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Målnivå kvalitetsregister</c:displayName>
+         <c:id>059d6a02-1a93-4ae3-a4a3-f2c17d970d92</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>65 - 80</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Ålder 65 till 80 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 65 - 80</c:displayName>
+         <c:id>06c6bd24-ce13-4705-a2f1-f375b24fb0ab</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Medianvärde på VAS-skala</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Medianvärde på VAS-skala</c:definition>
+         <c:displayName>Medianvärde på VAS-skala.</c:displayName>
+         <c:id>06c8c747-0c3b-4106-b4a6-2c82acce995b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Relativ risk</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Relativ risk</c:definition>
+         <c:displayName>Relativ risk</c:displayName>
+         <c:id>0b389e07-6388-458c-92d9-17244cffbdaf</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Veckor</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Veckor</c:definition>
+         <c:displayName>Veckor</c:displayName>
+         <c:id>0decc193-a105-472d-9984-4b22750566a0</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Gynekologi</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Gynekologi utgör tillsammans med obstetrik verksamhetsområdet kvinnosjukvård och de flesta gynekologer är även obstetriker. Gynekologi är den specialitet som studerar sjukdomar i kvinnans könsorgan, exempelvis livmoder, vagina och äggstockar.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Gynekologi</c:displayName>
+         <c:id>10fee80c-8132-4bc5-9bb4-85c1de7a6ea9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>TVÅÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>TVÅÅR</c:definition>
+         <c:displayName>Två år</c:displayName>
+         <c:id>1739575f-eace-493d-9b7e-2e200c745687</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>60-69</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 60 år och 69 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 60-69</c:displayName>
+         <c:id>17be65f5-4dc8-441e-a30d-2d79645be617</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Patientrapporterade resultat</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin patientrapporterade resultat innefattar alla indikatorer där patineterna har rapporterat någon form av resultat av sin behandling.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Patientrapporterade resultat</c:displayName>
+         <c:id>1a3951d1-3eb8-4b0b-ae6d-6a94d46c964d</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Sjukdomsförekomst</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Sjukdomsförekomst</c:displayName>
+         <c:id>1f7dee6e-a6e4-40bf-8839-119c0f2d375b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Patienterfarenheter</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin patienterfarenheter innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter patienternas erfarenheter.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Patienterfarenheter</c:displayName>
+         <c:id>20ffa795-1529-47bd-bdad-0ef5a1c74ebb</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Koloncancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Koloncancer</c:displayName>
+         <c:id>214f1977-22b0-498d-b6cd-f9c941bfebc3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Kronor</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Kronor</c:definition>
+         <c:displayName>Kronor</c:displayName>
+         <c:id>21d8708c-3d50-4e29-b4ce-be613e1e2880</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Vaccinationer och screening</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Vaccinationer och screening&lt;/p&gt;
+</c:definition>
+         <c:displayName>Vaccinationer och screening</c:displayName>
+         <c:id>2494d488-fa2a-4069-918d-1c29362b1252</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Kvot</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Kvot</c:definition>
+         <c:displayName>Kvot</c:displayName>
+         <c:id>253ec28f-ef04-4d97-8aac-95eebf057038</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Prostatacancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Prostatacancer</c:displayName>
+         <c:id>26367a04-45fd-46ea-b152-1492d639f1e6</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Variation i medicinsk praxis</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Variation i medicinsk praxis</c:displayName>
+         <c:id>2aff2363-42bf-4124-a3e8-3f5077571196</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Kostnader och produktivitet</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Kostnader och produktivitet</c:displayName>
+         <c:id>2decca8d-cdd1-41d8-baad-76c0a055f5cc</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Värde</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName null="true" />
+         <c:id>2df5366b-0c3c-4b6a-ad17-9c410b178693</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Infektionssjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Det primära omhändertagandet vid exempelvis svår sepsis eller meningit, är helt avgörande för patientens chanser att överleva. Svår sepsis är vanligare än både akut ST-höjningsinfarkt och lungemboli och dödligheten är minst lika hög.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Infektionssjukdom</c:displayName>
+         <c:id>2e25cae5-793a-4d9f-bf8c-36142186c798</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Sociala faktorer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Sociala faktorer</c:displayName>
+         <c:id>2e8e08d2-17b7-41b6-93b7-6052735e618a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>FEMÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>FEMÅR</c:definition>
+         <c:displayName>Fem år</c:displayName>
+         <c:id>2f770a6d-53dc-474d-b84a-bb364e6cb8d3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Förtroende för hälso- och sjukvården</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin&amp;nbsp;förtroende för hälso- och sjukvården&amp;nbsp;innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter befolkningens förtroende.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Förtroende för hälso- och sjukvården</c:displayName>
+         <c:id>2fab92af-5123-4d87-8605-4a80c0e613ec</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>5</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Antal per hundra tusen</c:definition>
+         <c:displayName>Antal per hundra tusen</c:displayName>
+         <c:id>32a3675e-34fd-4d5b-b258-6b7df0c7a8d4</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Förebyggande vård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Förebyggande vård</c:displayName>
+         <c:id>32eee07f-57ab-4c8f-90fc-0f25f3678692</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Psykisk ohälsa</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Den psykiatriska vården kan vara öppen eller sluten. Öppenvård förekommer när en patient är så pass frisk och klar i sinnet att denne kan ta eget ansvar för sin förbättring&lt;/p&gt;
+</c:definition>
+         <c:displayName>Psykisk ohälsa</c:displayName>
+         <c:id>33527b23-fc22-49d3-8b37-b0c8604054fe</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Palliativ vård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Vissa människor lever med en obotlig sjukdom i åtskilliga år, medan andra är fria från symtomgivande sjukdom ända till det är mycket kort tid kvar att leva. Det är därmed viktigt att konstatera att palliativ vård är &amp;nbsp;mer än vård i livets sista veckor.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Palliativ vård</c:displayName>
+         <c:id>358a42f5-e2fc-4d15-805a-d69a8d24792c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hörselrehabilitering</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Hörselrehabilitering</c:displayName>
+         <c:id>379ed5f9-64a1-4850-8de8-94ec0519952c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Kärlkirurgi</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Kärlkirurgi</c:displayName>
+         <c:id>3870c0b4-5032-4658-be3f-19d321164c80</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Allmän kirurgi</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Allmän kirurgi</c:displayName>
+         <c:id>3ad5e3b7-f99b-4d64-9c33-fe5fee1cdd81</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Övervikt och fetma</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Fetma är en vanlig sjukdom som kan uppstå när man äter mer än vad man förbränner. Orsaken till fetma kan till exempel vara livsstil, miljö och ärftlighet. Fetma belastar och anstränger kroppen vilket ökar risken för att få andra sjukdomar.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Övervikt och fetma</c:displayName>
+         <c:id>3d617eb8-a854-4274-9909-d09a93a07ffe</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Habilitering</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Habilitering ska ge den som är funktionsnedsatt stöd för att kunna leva ett så självständigt liv som möjligt. Stödet ska anpassas medicinskt, psykologiskt, socialt och pedagogiskt utifrån individens behov.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Habilitering</c:displayName>
+         <c:id>3ec2ad93-e6ce-43c0-9868-bfdba7ca800a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>0</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>0-364 dagar gammal.</c:definition>
+         <c:displayName>Ålder 0</c:displayName>
+         <c:id>466ffa0c-8d41-473b-a6d6-b01f8f746a3c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Bröstcancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Bröstcancer</c:displayName>
+         <c:id>47895c46-bf92-45f3-8170-c2b24f3dfbe9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Kostnadseffektiv sjukvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Kostnadseffektiv sjukvård</c:displayName>
+         <c:id>51c55590-f133-4440-babd-adec344ae8a6</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Minuter</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Minuter</c:definition>
+         <c:displayName>Minuter</c:displayName>
+         <c:id>5419b7fa-9918-4d2f-bda3-819cf810e10a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>30-39</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 30 år och 39 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 30-39</c:displayName>
+         <c:id>54557d31-5a34-40ce-a883-79040b2a2606</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>65-69</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 65 år och 69 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 65-69 år</c:displayName>
+         <c:id>580b7f04-c372-4a21-983a-c85bd8b3c4cd</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>100plus</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Från 100 år och uppåt</c:definition>
+         <c:displayName>Ålder 100 och äldre</c:displayName>
+         <c:id>5c51bd3b-879a-4941-896a-dab343347406</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Tertial</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Tertial</c:displayName>
+         <c:id>5db2203c-4a1f-4644-9243-f14b269a4a42</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Läkemedelsbehandling</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin läkemedelsbehandling innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som avser att mäta läkemedelsbehandling.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Läkemedelsbehandling</c:displayName>
+         <c:id>5e44658f-0121-452a-96b5-5f6cf7ef116f</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Graviditet, förlossnings- och nyfödda</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;I Sverige sker närmare 100 000 förlossningar varje år. I ett långt perspektiv har det skett oerhörda förbättringar av hälsan för både kvinnor och barn i samband med graviditet och förlossning.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Graviditet, förlossnings- och nyfödda</c:displayName>
+         <c:id>5fcd3a57-6698-4fb3-b356-ef893dbd4f95</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Barn och unga</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin sjukvård av barn och unga innefattar all sorts sjukvård som har med barn och unga att göra akut som planerad inom alla olika medicinska specialiteter.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Barn och unga</c:displayName>
+         <c:id>5fd8eb7c-07cc-4b27-a7d2-c2cb2fd8f132</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>20-29</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 20 år och 29 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 20-29</c:displayName>
+         <c:id>60ec408f-e8b5-4c9d-a6a9-498ab9c6de7d</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Sjuksköterska</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Sjuksköterska</c:displayName>
+         <c:id>63df46e9-11e7-41a5-a4fc-583cddba787a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>TREÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>TREÅR</c:definition>
+         <c:displayName>Tre år</c:displayName>
+         <c:id>68b42825-3b26-427d-a26f-b868a80a5b75</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Sjukdomsgrad</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Sjukdomsgrad</c:displayName>
+         <c:id>6d5cc1fa-847c-4f8d-90d1-cbb4ee36e42b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>&lt; 18 år</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>0 - 17 år och 364 dagar</c:definition>
+         <c:displayName>Ålder &lt; 18 år</c:displayName>
+         <c:id>6d9d4770-1d1b-4050-93b9-016553f79973</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>6</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Antal per tusen</c:definition>
+         <c:displayName>Antal per tusen</c:displayName>
+         <c:id>70863eaa-8602-4051-975b-5148e5609319</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>&gt; 80</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Över 80 år och 364 dagar</c:definition>
+         <c:displayName>Ålder &gt; 80</c:displayName>
+         <c:id>711f4976-18ac-4447-9803-f7cfa35dd5f2</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Öron-Näsa-Hals</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Det är mycket vanligt med ont i halsen och det finns många orsaker till halsont. Vanligast är ändå ont i halsen i samband med en vanlig förkylning eller influensa.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Öron-Näsa-Hals</c:displayName>
+         <c:id>7168f115-2943-49bf-a22a-abd8812c34d3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>PVQ</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>PrimärvårdsKvalitet</c:displayName>
+         <c:id>72f0676d-de32-4c94-a40b-11dc66a7aa04</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Värde</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Beteckning när inget annat passar eller vid temporära lösningar - värde utan närmare specifikation</c:definition>
+         <c:displayName>Värde</c:displayName>
+         <c:id>733b7031-47ab-4a80-8d40-91fc4aa4776e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>30 - 64</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>30 år till 64 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 30 - 64</c:displayName>
+         <c:id>74df40e2-e615-4a65-bf6d-bc7b5e72d551</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Dagar</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Dagar</c:definition>
+         <c:displayName>Dagar</c:displayName>
+         <c:id>76784d8b-d273-4a98-8ad8-e821004ba314</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Tandvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Tandvård i Sverige bedrivs i dag dels av Folktandvården och dels av privattandläkare. Privattandläkarna är oftast enskilda fristående kliniker men några kedjebildningar har uppkommit sedan slutet av 1990-talet.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Tandvård</c:displayName>
+         <c:id>779335d8-43af-4a5d-a78d-e689211a88c7</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hjälpmedel</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Hjälpmedel</c:displayName>
+         <c:id>78e4bc52-dbfe-4244-b0c9-82253bc440a8</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>40-49</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 40 år och 49 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 40-49</c:displayName>
+         <c:id>7ad18479-ab08-4d3b-8fe4-62ad17f50336</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>3-5</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>3-5 år 364 dagar</c:definition>
+         <c:displayName>Ålder 3-5</c:displayName>
+         <c:id>7d10d95a-024e-4b9e-885d-676c2c232d18</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Medelvärde för KOOS</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Medelvärde för KOOS</c:definition>
+         <c:displayName>Medelvärde för KOOS</c:displayName>
+         <c:id>80d69085-000c-4df0-ae84-a42bd5ad9afa</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Intensivvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;På en intensivvårdsavdelning där det är högre personaltäthet och en högteknologisk miljö vårdas patienter som behöver ha mer noggrann övervakning än vad som kan ges på en vanlig vårdavdelning.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Intensivvård</c:displayName>
+         <c:id>8b914794-50e8-4cff-8c58-671b99242417</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>COHORT</c:codeId>
+         <c:codeSystemOID>54479f1e3150584788ceffcd</c:codeSystemOID>
+         <c:definition>Anger att indikatorns värde är av typen kohort</c:definition>
+         <c:displayName>Kohort</c:displayName>
+         <c:id>90c07a4f-f013-45c6-a7a3-87ec097aff70</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Reumatisk sjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;De vanligaste reumatiska åkommorna är ledgångsreumatism, artros, artrit, psoriasisartrit och fibromyalgi. Den vanligaste av alla reumatiska sjukdomar i Sverige, är artros som är en ledsjukdom.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Reumatisk sjukdom</c:displayName>
+         <c:id>94bb83f3-65a3-447d-911f-3557c380a5bb</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>BMIsds-enheter</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>BMIsds-enheter</c:definition>
+         <c:displayName>BMIsds-enheter</c:displayName>
+         <c:id>98d7c570-9c8f-4179-b393-c1ba929589f5</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hjärtsjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Under de senaste 30&amp;ndash;35 åren har insjuknande och dödlighet i olika hjärtsjukdomar stadigt minskat i landet. Under 1980-talet gjordes stora genombrott i behandlingen av hjärtinfarkt och hjärtsvikt.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Hjärtsjukdom</c:displayName>
+         <c:id>9c7eee63-9a7b-402d-9ec7-e55ba03eaf41</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Vårdkonsumtion</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin vårdkonsumtion innefattar alla som avser att mäta befolkningens konsumtion /(nyttjande) av sjukvård.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Vårdkonsumtion</c:displayName>
+         <c:id>a02e72a4-b4ce-41c5-8ae1-640d29d8dd7e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Dödlighet i befolkningen</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin dödlighet i befolkningen innefattar alla indikatorer som mäter dödlighet hos en viss patientgrupp eller dylikt.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Dödlighet i befolkningen</c:displayName>
+         <c:id>a2ac7507-7c35-44a4-96c7-ac18bc1f6b2b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>hog</c:codeId>
+         <c:codeSystemOID>1.2.826.0.1.3680043.9.4672.8</c:codeSystemOID>
+         <c:definition />
+         <c:displayName>Hög målnivå</c:displayName>
+         <c:id>a4a84aba-1432-4294-8b74-c2b775830546</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Huvud- och halscancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Huvud- och halscancer</c:displayName>
+         <c:id>a717e57c-ef9b-472f-b1e6-b7035a88ca1e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Lungcancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Lungcancer</c:displayName>
+         <c:id>a9e23077-8233-41c1-aa73-36dcc6453d4e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hälsoläge och sjukdomsförekomst</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Hälsoläge och sjukdomsförekomst</c:displayName>
+         <c:id>ac05d79e-e3e0-464f-aee6-8ca6dc641bcf</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>6-9</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>6-9 år 364 dagar</c:definition>
+         <c:displayName>Ålder 6-9</c:displayName>
+         <c:id>adf09c44-e555-49a3-a3bb-1f169730c7fe</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>50-59</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 50 år och 59 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 50-59</c:displayName>
+         <c:id>b063c7ea-3cac-4ed4-9632-2a70ca6367c0</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Kirurgisk behandling</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Kirurgisk behandling</c:displayName>
+         <c:id>b0796fe2-9a91-4abc-a080-5477eff04d95</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hudsjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Hudproblem kan ha en mängd olika orsaker, som till exempel överkänslighet, ärftliga faktorer, de kan vara symtom på infektionssjukdom, tumörsjukdom, leversjukdom eller könssjukdom.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Hudsjukdom</c:displayName>
+         <c:id>b176cb16-3477-49a7-ac4f-2dc8685a5ca7</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>0-9</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 0 dagar och 9 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 0-9</c:displayName>
+         <c:id>b1cc7c72-9f88-42da-87e9-c66372880f57</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Astma och KOL</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Även om det finns många likheter mellan astma och KOL är det två olika sjukdomar. Astma debuterar &amp;nbsp;i tidig ålder och beror på ärftliga faktorer eller allergi. KOL debuterar efter 40 och beror oftast på rökning.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Astma och KOL</c:displayName>
+         <c:id>b1db8765-208f-4783-abb4-2a3f2e3c3d82</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Timmar</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Timmar</c:definition>
+         <c:displayName>Timmar</c:displayName>
+         <c:id>b3536b3e-26d4-4019-a860-9ae2271e6c92</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>PUK-värde</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>PUK-värde</c:definition>
+         <c:displayName>PUK-värde</c:displayName>
+         <c:id>b58fc273-d4e9-4fa9-957a-858f2e3e2eff</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>80-84</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 80 år och 84 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 80-84 år</c:displayName>
+         <c:id>b994b76d-94a7-40bc-9608-c945dbbaea45</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>ÄldreÄn12år</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Äldre än 12 år</c:definition>
+         <c:displayName>Ålder Äldre än 12 år</c:displayName>
+         <c:id>bae8258c-a605-4b8b-8a11-37e030e01117</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>4</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>%</c:definition>
+         <c:displayName>%</c:displayName>
+         <c:id>bbf45ac1-9651-4a24-ba6f-020b67d7fdd4</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>85-89</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 85 år och 89 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 85-89 år</c:displayName>
+         <c:id>bec8a28c-0260-4897-95bc-b8ea92a9e17b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>0-2</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>0-2 år 364 dagar</c:definition>
+         <c:displayName>Ålder 0-2</c:displayName>
+         <c:id>c3c574b5-8acd-4e51-b09b-b64f990b35c1</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>70-74</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 70 år och 74 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 70-74 år</c:displayName>
+         <c:id>c5c90b27-ceae-4664-a616-21e71cb90ae3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>SMR – Standardised Mortality Ratio</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>SMR</c:definition>
+         <c:displayName>SMR – Standardised Mortality Ratio</c:displayName>
+         <c:id>c851a549-03de-4347-9e2d-3782af69be96</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>mattlig</c:codeId>
+         <c:codeSystemOID>1.2.826.0.1.3680043.9.4672.8</c:codeSystemOID>
+         <c:definition />
+         <c:displayName>Måttlig målnivå</c:displayName>
+         <c:id>ce99f38c-1a4e-49b3-91cd-e968a29c3e3e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Ögonsjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Ungefär 500 000 svenskar lider av någon av de mest vanliga ögonsjukdomarna, såsom glaukom (grön starr), katarakt (grå starr) och diabetesretinopati.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Ögonsjukdom</c:displayName>
+         <c:id>d1fc312d-b62e-4511-a16a-24ae0f5b86dd</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>FYRAÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>FYRAÅR</c:definition>
+         <c:displayName>Fyra år</c:displayName>
+         <c:id>d201ba97-4b7e-4da0-9ce5-8f376d74d700</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>75-79</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 75 år och 79 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 75-79 år</c:displayName>
+         <c:id>d5de3227-609a-4b32-b282-6de22c502857</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Väntetider och tillgänglighet</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin väntetider och tillgänglighet innefattar alla indikatorer som avser att mäta patienternas väntetider och tillgänglighet till sjukvården.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Väntetider och tillgänglighet</c:displayName>
+         <c:id>d6d02166-173c-4bf0-9d25-633a4d74f1f7</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Deltagande i kvalitetsmätning</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Deltagande i kvalitetsmätning</c:displayName>
+         <c:id>d75ccb50-7122-459c-88b9-a9c7f454183e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Cancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Cancer ger olika symptom och får olika behandlingar beroende på vilken cancersjukdom. De sju vanligaste cancersjukdomarna står för cirka 65 procent av alla cancerfall, 39 694 stycken.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Cancer</c:displayName>
+         <c:id>da02faf9-3d42-429a-8b52-6f03bcf809be</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Demenssjukvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Demenssjukvård</c:displayName>
+         <c:id>da1b5128-62dc-4544-a3c5-c1eea6bed7f8</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Kvalitetsaspekter i nationell fokus</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Kvalitetsaspekter i nationell fokus</c:displayName>
+         <c:id>dc424f10-d07b-4d29-b7b1-aa169381682a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Antal per hundra</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Antal per hundra</c:definition>
+         <c:displayName>Antal per hundra</c:displayName>
+         <c:id>dddb01fa-ed9d-491a-9f60-c5f8453f2a0a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>90-94</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 90 år och 94 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 90-94 år</c:displayName>
+         <c:id>df4f77da-41f8-469f-aa2c-320f55017da4</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Ortopedi</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;En tredjedel av all ohälsa och sjukfrånvaro beror på rörelseorganens sjukdomar och kostar därför samhället stora summor årligen, utöver det lidande som blir följden för de drabbade.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Ortopedi</c:displayName>
+         <c:id>e09de8ef-25fe-4eef-a28e-2bb400367306</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>10-19</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 10 år och 19 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 10-19</c:displayName>
+         <c:id>e1924794-34f4-4565-b2fa-3a68ee7ee4c7</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>80-89</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 80 år och 89 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 80-89</c:displayName>
+         <c:id>e25b3d07-3e13-4c7d-af42-eec1540f0be9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Index</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>Index</c:definition>
+         <c:displayName>Index</c:displayName>
+         <c:id>e51e685c-c3f5-4a21-a3e9-187d45f7e1c3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Multipel Skleros</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Multipel Skleros</c:displayName>
+         <c:id>e96ac4e9-58fa-4917-9eb6-f99663dc1162</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Dödlighet vid sjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Dödlighet vid sjukdom</c:displayName>
+         <c:id>eab29d97-8dbd-4ab4-8bd9-6fe5b4d9890a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Säker vård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Säker vård</c:displayName>
+         <c:id>ed12da33-6ac2-462e-88f0-92f5dc27ed1e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>Sjukdomsförebyggande åtgärder</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Sjukdomsförebyggande åtgärder</c:displayName>
+         <c:id>f06f3447-2a75-4bee-9f30-d3c34ceee2b9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Öppna jämförelser</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Öppna jämförelser</c:displayName>
+         <c:id>f5e139e6-4d4f-4d8f-afd1-295c7ef0fbd2</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hälso-och sjukvårdsregion</c:codeId>
+         <c:codeSystemOID>54748b66315319316c168ef3</c:codeSystemOID>
+         <c:definition>Hälso-och sjukvårdsregion</c:definition>
+         <c:displayName>Hälso-och sjukvårdsregion</c:displayName>
+         <c:id>f7c0531c-86ca-4570-a9af-9cd5bbdc9f98</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Ålder 70-79</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 70 år och 79 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 70-79</c:displayName>
+         <c:id>f97f762b-73c2-4bbe-b0f3-2bc0e96ecd90</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Neurologi</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Neurologiska sjukdomar är sjukdomar som drabbar centrala nervsystemet (hjärna och ryggmärg), perifera nervsystemet (perifera nerver inklusive kranialnerver), eller autonoma nervsystemet (delar som är lokaliserade både i centrala- och perifera nervsystemet).&lt;/p&gt;
+</c:definition>
+         <c:displayName>Neurologi</c:displayName>
+         <c:id>fab7c148-c84f-49a6-aacc-018724c0663e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>90-99</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 90 år och 99 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 90-99</c:displayName>
+         <c:id>fb9376b6-12fa-47b4-8a2a-031657a72a0d</c:id>
+      </c:code>
+      <c:code>
+         <c:active>false</c:active>
+         <c:codeId>95-99</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Mellan 95 år och 99 år och 364 dagar</c:definition>
+         <c:displayName>Ålder 95-99 år</c:displayName>
+         <c:id>fcce1432-6aba-4f77-b538-4d452dcd54d5</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1-11</c:codeId>
+         <c:codeSystemOID>19bb7abe-7de4-420f-8259-7aca0a461b6f</c:codeSystemOID>
+         <c:definition>Från och med ett årsdagen tom 11 år och 364 dagar.</c:definition>
+         <c:displayName>Ålder 1-11</c:displayName>
+         <c:id>fe06f688-804c-40a1-927f-c41cef91ebdd</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Rektalcancer</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition null="true" />
+         <c:displayName>Rektalcancer</c:displayName>
+         <c:id>fe69b3ee-a14d-42a7-8d74-3a849e6afcf9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Njursjukdom</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Om njurarnas funktion bara är lite nedsatt har man oftast inga symtom. En njursjukdom brukar då upptäckas genom att man lämnar blod- eller urinprover. Symtom kan vara trött, må illa och få klåda på kroppen.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Njursjukdom</c:displayName>
+         <c:id>fe6a7fa8-3a44-4c21-be50-b3a9d906a5ef</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Diabetes</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Diabetes är en folksjukdom med cirka 400 000 drabbade. Diabetes är egentligen inte en utan flera olika sjukdomar med högt blodsocker som det gemensamma kännetecknet. Orsakerna till att det höga blodsockret skiljer mellan de olika typerna av diabetes.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Diabetes</c:displayName>
+         <c:id>543cea333152bd41105a9138</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>STROKE</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;En stroke leder till en syrebrist i hjärnan som skadar de funktioner som styrs från området där blodproppen eller blödningen sitter. Stroke är livshotande och man behöver omedelbart få vård.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Stroke</c:displayName>
+         <c:id>543cea343152bd41105a9139</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>RIKLINJESTODD_BEHANDLING</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>Riktlinjestödd behandling</c:definition>
+         <c:displayName>Riktlinjestödd behandling</c:displayName>
+         <c:id>543cea353152bd41105a913a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Hälsoläge och levnadsvanor</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin hälsoläge och levnadsvanor innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som syftar till att mäta någon typ av hälsoläge och levnadsvanor i befolkningen.&lt;/p&gt;
+</c:definition>
+         <c:displayName>Hälsoläge och levnadsvanor</c:displayName>
+         <c:id>543cea3d3152bd41105a913b</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>SEKUNDARPREVENTION</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>Sekundärprevention</c:definition>
+         <c:displayName>Sekundärprevention</c:displayName>
+         <c:id>543cea3e3152bd41105a913c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>Primärvård</c:codeId>
+         <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
+         <c:definition>&lt;p&gt;Kategorin primärvård innefattar alla indikatorer som avser att mäta olika aspekter av primärvården.&amp;nbsp;&lt;/p&gt;
+</c:definition>
+         <c:displayName>Primärvård</c:displayName>
+         <c:id>543cea3f3152bd41105a913d</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>PROPORTION</c:codeId>
+         <c:codeSystemOID>54479f1e3150584788ceffcd</c:codeSystemOID>
+         <c:definition>Anger att indikatorns värde är av typen andel</c:definition>
+         <c:displayName>Andel</c:displayName>
+         <c:id>5444f28731504f493890e7b3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>MEASUREMENT</c:codeId>
+         <c:codeSystemOID>54479f1e3150584788ceffcd</c:codeSystemOID>
+         <c:definition>Anger att indikatorns värde är av typen mätvärde</c:definition>
+         <c:displayName>Mätvärde</c:displayName>
+         <c:id>5444f2e731504f493890e7c3</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>mm[Hg]</c:definition>
+         <c:displayName>mm[Hg]</c:displayName>
+         <c:id>544679b431509a480440ecc5</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>2</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>mmol/L</c:definition>
+         <c:displayName>mmol/L</c:displayName>
+         <c:id>544679f831509a480440ece8</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>3</c:codeId>
+         <c:codeSystemOID>544678f431509a480440ecaf</c:codeSystemOID>
+         <c:definition>mmol/mol</c:definition>
+         <c:displayName>mmol/mol</c:displayName>
+         <c:id>54467a1131509a480440ecfd</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>54467b4a31509a480440ed2b</c:codeSystemOID>
+         <c:definition>Anger att ett målvärde är av typen mätvärde, dvs värde med enhet</c:definition>
+         <c:displayName>Mätvärde</c:displayName>
+         <c:id>54467b5a31509a480440ed43</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>2</c:codeId>
+         <c:codeSystemOID>54467b4a31509a480440ed2b</c:codeSystemOID>
+         <c:definition>Anger att målvärdet är av typen kvot</c:definition>
+         <c:displayName>Kvot</c:displayName>
+         <c:id>54467b8d31509a480440ed5c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>5447717431505822d0f4f4e8</c:codeSystemOID>
+         <c:definition>Anger om organisationen är ett land</c:definition>
+         <c:displayName>Land</c:displayName>
+         <c:id>5447722f31506222d0b0f02a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>4</c:codeId>
+         <c:codeSystemOID>5447717431505822d0f4f4e8</c:codeSystemOID>
+         <c:definition>Anger om en organisation är ett sjukhus</c:definition>
+         <c:displayName>Sjukhus</c:displayName>
+         <c:id>5447724f31506222d0b0f049</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>5444ef7331504f493890e7a4</c:codeSystemOID>
+         <c:definition>Indikator som är av typen resultatmått</c:definition>
+         <c:displayName>Resultat</c:displayName>
+         <c:id>54479f933150584788cf003a</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>2</c:codeId>
+         <c:codeSystemOID>5444ef7331504f493890e7a4</c:codeSystemOID>
+         <c:definition>Indikator som är av typen strukturmått</c:definition>
+         <c:displayName>Struktur</c:displayName>
+         <c:id>54479fdd3150584788cf005e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>3</c:codeId>
+         <c:codeSystemOID>5444ef7331504f493890e7a4</c:codeSystemOID>
+         <c:definition>Indikator som är av typen processmått</c:definition>
+         <c:displayName>Process</c:displayName>
+         <c:id>5447a00f3150584788cf00ad</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>4</c:codeId>
+         <c:codeSystemOID>5444ef7331504f493890e7a4</c:codeSystemOID>
+         <c:definition>Indikatorns typ är okänd</c:definition>
+         <c:displayName>Okänd</c:displayName>
+         <c:id>5447a02d3150584788cf00f8</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>5457794537874129a8ef8aaf</c:codeSystemOID>
+         <c:definition>Man</c:definition>
+         <c:displayName>Man</c:displayName>
+         <c:id>545779c937874129a8ef8ace</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>2</c:codeId>
+         <c:codeSystemOID>5457794537874129a8ef8aaf</c:codeSystemOID>
+         <c:definition>Kvinna</c:definition>
+         <c:displayName>Kvinna</c:displayName>
+         <c:id>545779e637874129a8ef8af5</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>HIGH</c:codeId>
+         <c:codeSystemOID>5474837931504f316c60a079</c:codeSystemOID>
+         <c:definition>Högt</c:definition>
+         <c:displayName>Högt</c:displayName>
+         <c:id>5474840531504f316c6101d9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>LOW</c:codeId>
+         <c:codeSystemOID>5474837931504f316c60a079</c:codeSystemOID>
+         <c:definition>Lågt</c:definition>
+         <c:displayName>Lågt</c:displayName>
+         <c:id>5474845b31504f316c61633f</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>1</c:codeId>
+         <c:codeSystemOID>547486283151b3316c97d703</c:codeSystemOID>
+         <c:definition>Patientens hemortslandsting</c:definition>
+         <c:displayName>Patientens hemortslandsting</c:displayName>
+         <c:id>547486843151b3316c9807ad</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>2</c:codeId>
+         <c:codeSystemOID>547486283151b3316c97d703</c:codeSystemOID>
+         <c:definition>Klinikens/mottagningens geografiska lokalisering till länet</c:definition>
+         <c:displayName>Klinikens/mottagningens geografiska lokalisering till länet</c:displayName>
+         <c:id>547486b43151b3316c98386c</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>ÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>ÅR</c:definition>
+         <c:displayName>År</c:displayName>
+         <c:id>547489db315319316c159aee</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>HALVÅR</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>HALVÅR</c:definition>
+         <c:displayName>Halvår</c:displayName>
+         <c:id>54748a09315319316c15cbb2</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>KVARTAL</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>KVARTAL</c:definition>
+         <c:displayName>Kvartal</c:displayName>
+         <c:id>54748a38315319316c15fc77</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>MÅNAD</c:codeId>
+         <c:codeSystemOID>547489a8315319316c156a41</c:codeSystemOID>
+         <c:definition>MÅNAD</c:definition>
+         <c:displayName>Månad</c:displayName>
+         <c:id>54748a63315319316c162d3d</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>NOTSPECIFIED</c:codeId>
+         <c:codeSystemOID>5474837931504f316c60a079</c:codeSystemOID>
+         <c:definition>Ej angivet</c:definition>
+         <c:displayName>Ej angivet</c:displayName>
+         <c:id>54762d1d31504f379cb87a1e</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>RIKS</c:codeId>
+         <c:codeSystemOID>54748b66315319316c168ef3</c:codeSystemOID>
+         <c:definition>Används för att beskriva om indikatorn skall rapporteras på riksnivå, på länsnivå, på sjukhusnivå eller på mottagninsnivå.</c:definition>
+         <c:displayName>Riksnivå</c:displayName>
+         <c:id>54763d8631504f144406cbc9</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>LANS</c:codeId>
+         <c:codeSystemOID>54748b66315319316c168ef3</c:codeSystemOID>
+         <c:definition>Används för att beskriva om indikatorn skall rapporteras på riksnivå, på länsnivå, på sjukhusnivå eller på mottagninsnivå.</c:definition>
+         <c:displayName>Länsnivå</c:displayName>
+         <c:id>54763e0531504f144406ccf0</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>SJUKHUS</c:codeId>
+         <c:codeSystemOID>54748b66315319316c168ef3</c:codeSystemOID>
+         <c:definition>Används för att beskriva om indikatorn skall rapporteras på riksnivå, på länsnivå, på sjukhusnivå eller på mottagninsnivå.</c:definition>
+         <c:displayName>Sjukhusnivå</c:displayName>
+         <c:id>54763e4b31504f144406cd3f</c:id>
+      </c:code>
+      <c:code>
+         <c:active>true</c:active>
+         <c:codeId>MOTTAGNING</c:codeId>
+         <c:codeSystemOID>54748b66315319316c168ef3</c:codeSystemOID>
+         <c:definition> Används för att beskriva om indikatorn skall rapporteras på riksnivå, på länsnivå, på sjukhusnivå eller på mottagninsnivå. </c:definition>
+         <c:displayName>Mottagninsnivå</c:displayName>
+         <c:id>54763e7731504f144406cd8f</c:id>
+      </c:code>
+</c:codes>
+
