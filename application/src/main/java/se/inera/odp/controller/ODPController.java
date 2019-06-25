@@ -20,7 +20,7 @@ public class ODPController {
 	@GetMapping("/get/{id}")
 	public ResponseEntity<String> getDataById(@PathVariable String id) {
 
-		String result = ckanService.getDataById(id);
+		String result = ckanService.getResourceById(id);
 		if(result == null)
 			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 		else
@@ -30,7 +30,7 @@ public class ODPController {
 	@PostMapping("/save")
 	public ResponseEntity<?> createData(@RequestBody String data) {
 		//TODO
-		ckanService.saveData(data);
+		ckanService.saveResource(data);
 		return ResponseEntity.status(HttpStatus.CREATED).body(null);
 	}
 }
