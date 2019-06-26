@@ -1,0 +1,65 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v1-targetMeasurements",
+    "hash": "kik-v1-targetMeasurements__"
+  },
+  "fields": [
+    {
+      "id": "targetId",
+      "type": "text"
+    },
+    {
+      "id": "validFrom",
+      "type": "date"
+    },
+    {
+      "id": "validTo",
+      "type": "date"
+    },
+    {
+      "id": "targetName",
+      "type": "text"
+    },
+    {
+      "id": "targetDescription",
+      "type": "text"
+    },
+    {
+      "id": "targetType",
+      "type": "json"
+    },
+    {
+      "id": "targetMeasureId",
+      "type": "text"
+    },
+    {
+      "id": "targetOrganizationId",
+      "type": "text"
+    },
+    {
+      "id": "authoringOrganization",
+      "type": "text"
+    },
+    {
+      "id": "targetProportionMeasure",
+      "type": "json"
+    },
+    {
+      "id": "targetContinuousMeasure",
+      "type": "json"
+    },
+    {
+      "id": "targetCohortMeasure",
+      "type": "json"
+    },
+    {
+      "id": "author",
+      "type": "json"
+    }
+  ],
+  "primary_key": "targetId",
+  "always_strings": [
+    "targetMeasureId"
+  ]
+}

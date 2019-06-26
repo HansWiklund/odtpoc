@@ -1,0 +1,18 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-checksums",
+    "hash": "kik-v3-checksums__"
+  },
+  "fields": [
+    {
+      "id": "id",
+      "type": "text"
+    },
+    {
+      "id": "checksum",
+      "type": "text"
+    }
+  ],
+  "primary_key": "id"
+}

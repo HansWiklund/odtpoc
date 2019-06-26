@@ -1,0 +1,68 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-measures",
+    "hash": "kik-v3-measures__"
+  },
+  "fields": [
+    {
+      "id": "measureId",
+      "type": "text"
+    },
+    {
+      "id": "lastUpdated",
+      "type": "timestamp"
+    },
+    {
+      "id": "validFrom",
+      "type": "date"
+    },
+    {
+      "id": "validTo",
+      "type": "date"
+    },
+    {
+      "id": "publiclyAvailableInformation",
+      "type": "bool"
+    },
+    {
+      "id": "regionalIndicator",
+      "type": "text[]"
+    },
+    {
+      "id": "subCategoryDefinition",
+      "type": "json"
+    },
+    {
+      "id": "parentMeasureDefinition",
+      "type": "json"
+    },
+    {
+      "id": "author",
+      "type": "json"
+    },
+    {
+      "id": "authenticator",
+      "type": "json"
+    }
+  ],
+  "primary_key": "measureId",
+  "always_strings": [
+    "measureId"
+  ],
+  "always_arrays": [
+    "regionalIndicator",
+    "subCategoryCode",
+    "descriptionSource",
+    "measureGroupCode",
+    "denominatorInclusionValueSetId",
+    "denominatorExclusionValueSetId",
+    "numeratorInclusionValueSetId",
+    "numeratorExclusionValueSetId",
+    "measurePopulationInclusionValueSetId",
+    "measurePopulationExclusionValueSetId",
+    "measuringFrequency",
+    "organizationLevel",
+    "availableReportingSystemHsaId"
+  ]
+}

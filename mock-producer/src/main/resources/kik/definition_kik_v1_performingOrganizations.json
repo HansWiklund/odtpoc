@@ -1,0 +1,32 @@
+{
+	"resource": {
+		"package_id": "kvalitetsindikatorer",
+		"name": "kik-v1-performingOrganizations",
+        "hash": "kik-v1-performingOrganizations__"
+	},
+	"fields":   [
+			{
+				"id": "performingOrganizationId",
+				"type": "text"
+			},
+			{
+				"id": "performingOrganizationHsaId",
+				"type": "text"
+			},
+			{
+				"id": "performingOrganizationName",
+				"type": "text"
+			},
+			{
+				"id": "performingOrganizationType",
+				"type": "json"
+			},
+			{
+				"id": "asOrganizationPartOf",
+				"type": "json"
+			}
+	],
+	"primary_key": "performingOrganizationId",
+	"always_strings": "performingOrganizationHsaId",
+	"always_arrays": ["organizationalTarget"]
+}

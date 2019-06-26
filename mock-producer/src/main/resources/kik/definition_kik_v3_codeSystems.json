@@ -1,0 +1,30 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-codeSystems",
+    "hash": "kik-v3-codeSystems__"
+  },
+  "fields": [
+    {
+      "id": "OID",
+      "type": "text"
+    },
+    {
+      "id": "name",
+      "type": "text"
+    },
+    {
+      "id": "source",
+      "type": "text"
+    },
+    {
+      "id": "description",
+      "type": "text"
+    },
+    {
+      "id": "active",
+      "type": "bool"
+    }
+  ],
+  "primary_key": "OID"
+}

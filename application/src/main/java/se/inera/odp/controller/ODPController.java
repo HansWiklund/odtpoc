@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import se.inera.odp.service.CKANService;
+import se.inera.odp.service.ODPService;
 
 // @RequestMapping(value = "/greeting", method = POST, consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 
@@ -18,7 +18,7 @@ public class ODPController {
 	Logger logger = LoggerFactory.getLogger(ODPController.class);
 
 	@Autowired
-	CKANService ckanService;
+	ODPService ckanService;
 	
 	@GetMapping("/get/{id}")
 	public ResponseEntity<String> getDataById(@PathVariable String id) {

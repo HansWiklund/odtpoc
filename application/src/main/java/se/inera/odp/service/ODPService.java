@@ -14,7 +14,7 @@ import se.inera.odp.client.CKANClient;
 import se.inera.odp.request.ODPRequest;
 
 @Service
-public class CKANService {
+public class ODPService {
 
 	@Autowired
 	CKANClient ckanClient;

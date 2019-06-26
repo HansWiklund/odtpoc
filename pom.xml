@@ -12,7 +12,8 @@
     <modules>
         <module>core</module>
         <module>application</module>
-        <module>mock</module>
+        <module>mock-adapter</module>
+        <module>mock-producer</module>
     </modules>
 
 </project>

@@ -1,0 +1,26 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-valueSets",
+    "hash": "kik-v3-valueSets__"
+  },
+  "fields": [
+    {
+      "id": "valueSetId",
+      "type": "text"
+    },
+    {
+      "id": "name",
+      "type": "text"
+    },
+    {
+      "id": "active",
+      "type": "bool"
+    },
+    {
+      "id": "codeInValueSet",
+      "type": "json"
+    }
+  ],
+  "primary_key": "valueSetId"
+}
