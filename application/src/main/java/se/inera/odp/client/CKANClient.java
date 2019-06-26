@@ -1,9 +1,15 @@
 package se.inera.odp.client;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 @Service
@@ -51,10 +57,19 @@ public class CKANClient {
 	}
 
 	// TODO:
-	public void createResource(String data) {
-		restTemplate.postForEntity(CKAN_DATASTORE_CREATE_URL, data, String.class).getBody();
+	public void createResource(String auth, String contentType, String data) {
+		
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
+		headers.add("Authorization", auth);
+		headers.add("Content-Type", contentType);
+		
+		HttpEntity<?> request = new HttpEntity<Object>(data, headers);
+		
+		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+		
+		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, String.class);
 	}
-
+	
 	// TODO:
 	public void updateResource(String data) {
 		restTemplate.postForEntity(CKAN_DATASTORE_UPDATE_URL, data, String.class);

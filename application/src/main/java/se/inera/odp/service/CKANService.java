@@ -59,4 +59,10 @@ public class CKANService {
 		Map<String, Object> map = mapper.readValue(value, Map.class);
 		return (Map<String, Object>)map.get("result");
 	}
+	
+	public void createData(String auth, String contentType, String data)
+	{
+		ckanClient.createResource(auth, contentType, data);
+	}
+	
 }
