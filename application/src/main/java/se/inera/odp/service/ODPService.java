@@ -60,7 +60,7 @@ public class ODPService {
 		return (Map<String, Object>)map.get("result");
 	}
 	
-	public void createData(String auth, String contentType, String data)
+	public void createResource(String auth, String contentType, String data)
 	{
 		ckanClient.createResource(auth, contentType, data);
 	}
