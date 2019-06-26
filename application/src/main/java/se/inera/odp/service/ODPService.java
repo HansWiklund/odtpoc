@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
-import se.inera.odp.request.ODPRequest;
 
 @Service
 public class ODPService {
@@ -61,9 +60,9 @@ public class ODPService {
 		return (Map<String, Object>)map.get("result");
 	}
 	
-	public void saveResource(String data) {	
-		System.out.println(data);
-		// ckanClient.createResource((String) data.getData());
+	public void createData(String auth, String contentType, String data)
+	{
+		ckanClient.createResource(auth, contentType, data);
 	}
-
+	
 }

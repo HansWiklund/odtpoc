@@ -31,10 +31,10 @@ public class ODPController {
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<?> createData(@RequestBody String data) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization") String auth, @RequestHeader(value="Content-Type") String contentType, @RequestBody String data) {
 
 		try {
-			ckanService.saveResource(data);
+			ckanService.createData(auth, contentType, data);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {

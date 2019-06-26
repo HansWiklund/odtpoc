@@ -63,9 +63,7 @@ public class CKANClient {
 		headers.add("Authorization", auth);
 		headers.add("Content-Type", contentType);
 		
-		HttpEntity<?> request = new HttpEntity<Object>(data, headers);
-		
-		restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+		HttpEntity<?> request = new HttpEntity<String>(data, headers);
 		
 		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, String.class);
 	}
