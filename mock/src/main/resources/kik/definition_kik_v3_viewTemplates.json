@@ -1,0 +1,26 @@
+{
+  "resource": {
+    "package_id": "kvalitetsindikatorer",
+    "name": "kik-v3-viewTemplates",
+    "hash": "kik-v3-viewTemplates__"
+  },
+  "fields": [
+    {
+      "id": "id",
+      "type": "text"
+    },
+    {
+      "id": "name",
+      "type": "text"
+    },
+    {
+      "id": "description",
+      "type": "text"
+    },
+    {
+      "id": "availableLabel",
+      "type": "text"
+    }
+  ],
+  "primary_key": "id"
+}
