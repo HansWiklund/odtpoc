@@ -20,17 +20,17 @@ public class ODPController {
 	@Autowired
 	ODPService ckanService;
 	
-	@GetMapping("/get/{id}")
-	public ResponseEntity<String> getResourceById(@PathVariable String id) {
+	@GetMapping("/get/{dataset_id}/{resource_id}")
+	public ResponseEntity<String> getResourceById(@PathVariable String dataset_id, @PathVariable String resource_id) {
 
-		String result = ckanService.getResourceById(id);
+		String result = ckanService.getResourceById(dataset_id, resource_id);
 		if(result == null)
 			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 		else
 			return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping(value="/save")
 	public ResponseEntity<?> createResource(@RequestHeader(value="Authorization") String auth, @RequestHeader(value="Content-Type") String contentType, @RequestBody String data) {
 
 		try {
@@ -42,4 +42,9 @@ public class ODPController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		}
 	}
+	
+	@GetMapping("/ping")
+	public ResponseEntity<String> getPingResponse() {
+		return new ResponseEntity<String>("OK", HttpStatus.NOT_FOUND);
+	}	
 }
