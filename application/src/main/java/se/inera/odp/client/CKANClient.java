@@ -91,7 +91,6 @@ public class CKANClient {
 		URI uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL)
 		        .build()
 		        .toUri();
-		System.out.println(uri);
 
 		for(String k : params.keySet())	{
 			uri = UriComponentsBuilder
@@ -100,7 +99,7 @@ public class CKANClient {
 			        .build()
 			        .toUri();
 			}
-		System.out.println(uri);
+
 		return restTemplate.getForEntity(uri, clazz);
 	}
 
