@@ -13,6 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
 import se.inera.odp.exception.ODPException;
+import se.inera.odp.request.CKANResponse;
+import se.inera.odp.request.CKANResult;
 
 @Service
 public class ODPService {
@@ -43,25 +45,19 @@ public class ODPService {
 				throw new ODPException("Resource " + resource_id + "does not exist");
 	
 			// Get result set
-			result = ckanClient.getData(resourceId);
-
-			// Remove _id
-			resultMap = createResultAsMap(result.getBody());
-			List<?> resultList = (List<?>)resultMap.get("records");
-			for(Object record : resultList) {
-				((Map<String, String>)record).remove("_id");
-			}
-			List<Map> fieldList = (List<Map>)resultMap.get("fields");
-			for(Map<String, String>field : fieldList) {
-				
-				if("_id".equals(field.get("id"))) {
-					fieldList.remove(field);
-					break;
-				}
+			ResponseEntity<CKANResponse> response = ckanClient.getData(resourceId, CKANResponse.class);
+			
+			CKANResponse ckanResponse = response.getBody();
+			CKANResult ckanResult = ckanResponse.getResult();
+			List<Map<String, ?>> ckanRecords = ckanResult.getRecords();
+			
+			for(Map<String, ?> rec : ckanRecords) {
+				rec.remove("_id");
 			}
 			
-			// return data;
-			return mapper.writeValueAsString(resultMap);
+			// return records;
+			return mapper.writeValueAsString(ckanRecords);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

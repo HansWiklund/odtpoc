@@ -56,6 +56,12 @@ public class CKANClient {
 		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
+	public <T> ResponseEntity<T> getData(String id, Class<T> clazz) {
+		if(id == null)
+			return null;
+		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, clazz, id, CKAN_DATASTORE_SEARCH_LIMIT);
+	}
+
 	// TODO:
 	public void createResource(String auth, String contentType, String data) {
 		
