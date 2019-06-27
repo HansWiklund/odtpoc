@@ -1,5 +1,7 @@
 package se.inera.odp.client;
 
+import java.net.URI;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class CKANClient {
@@ -28,7 +31,7 @@ public class CKANClient {
 	private String CKAN_DATASTORE_SEARCH_LIMIT;
 	
 	// URL for searching CKAN's datastore
-	@Value("${ckan.datastore.url}/action/datastore_search?id={id}&limit={limit}")
+	@Value("${ckan.datastore.url}/action/datastore_search")
 	private String CKAN_DATASTORE_SEARCH_URL;
 		
 	// URL for updating a datastore in CKAN
@@ -50,16 +53,55 @@ public class CKANClient {
 		return restTemplate.getForEntity(CKAN_PACKAGE_SHOW_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
-	public ResponseEntity<String> getData(String id) {
+	public ResponseEntity<String> getData(String id, Map<String, String> params) {
 		if(id == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
+		
+		if(params == null)
+			params = new HashMap<String, String>();
+		
+		params.put("id", id);
+		params.putIfAbsent("limit", CKAN_DATASTORE_SEARCH_LIMIT);
+						
+		URI uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL)
+		        .build()
+		        .toUri();
+		
+		for(String k : params.keySet())	{
+			uri = UriComponentsBuilder
+			        .fromUri(uri)
+			        .queryParam(k, params.get(k))
+			        .build()
+			        .toUri();
+			}
+
+		return restTemplate.getForEntity(uri, String.class);
 	}
 
-	public <T> ResponseEntity<T> getData(String id, Class<T> clazz) {
+	public <T> ResponseEntity<T> getData(String id, Map<String, String> params, Class<T> clazz) {
 		if(id == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, clazz, id, CKAN_DATASTORE_SEARCH_LIMIT);
+		
+		if(params == null)
+			params = new HashMap<String, String>();
+		
+		params.put("id", id);
+		params.putIfAbsent("limit", CKAN_DATASTORE_SEARCH_LIMIT);
+						
+		URI uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL)
+		        .build()
+		        .toUri();
+		System.out.println(uri);
+
+		for(String k : params.keySet())	{
+			uri = UriComponentsBuilder
+			        .fromUri(uri)
+			        .queryParam(k, params.get(k))
+			        .build()
+			        .toUri();
+			}
+		System.out.println(uri);
+		return restTemplate.getForEntity(uri, clazz);
 	}
 
 	// TODO:
@@ -84,7 +126,6 @@ public class CKANClient {
 		restTemplate.delete(CKAN_RESOURCE_DELETE_URL);
 	}
 
-
-
+ 
 	
 }

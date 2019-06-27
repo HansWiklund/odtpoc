@@ -15,6 +15,7 @@ import se.inera.odp.client.CKANClient;
 import se.inera.odp.exception.ODPException;
 import se.inera.odp.request.CKANResponse;
 import se.inera.odp.request.CKANResult;
+import se.inera.odp.request.ODPResponse;
 
 @Service
 public class ODPService {
@@ -26,7 +27,7 @@ public class ODPService {
 	ObjectMapper mapper;
 
 	@SuppressWarnings("unchecked")
-	public String getResourceById(String dataset_id, String resource_id) {
+	public String getResourceById(String dataset_id, String resource_id, Map<String, String> params) {
 		ResponseEntity<String> result;
 		
 		try {
@@ -45,7 +46,7 @@ public class ODPService {
 				throw new ODPException("Resource " + resource_id + "does not exist");
 	
 			// Get result set
-			ResponseEntity<CKANResponse> response = ckanClient.getData(resourceId, CKANResponse.class);
+			ResponseEntity<CKANResponse> response = ckanClient.getData(resourceId, params, CKANResponse.class);
 			
 			CKANResponse ckanResponse = response.getBody();
 			CKANResult ckanResult = ckanResponse.getResult();
@@ -55,8 +56,18 @@ public class ODPService {
 				rec.remove("_id");
 			}
 			
-			// return records;
-			return mapper.writeValueAsString(ckanRecords);
+			if(ckanResult.getTotal() == ckanRecords.size()) {
+				return mapper.writeValueAsString(ckanRecords);				
+			} else {			
+				ODPResponse odpResponse = new ODPResponse();
+				odpResponse.setRecords(ckanRecords);
+				odpResponse.setLinks(ckanResult.getLinks());
+				odpResponse.setOffset(ckanResult.getOffset());
+				odpResponse.setLimit(ckanResult.getLimit());
+				odpResponse.setTotal(ckanResult.getTotal());
+				return mapper.writeValueAsString(odpResponse);
+			}
+			
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

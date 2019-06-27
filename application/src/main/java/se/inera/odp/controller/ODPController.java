@@ -1,5 +1,7 @@
 package se.inera.odp.controller;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +23,11 @@ public class ODPController {
 	ODPService ckanService;
 	
 	@GetMapping("/get/{dataset_id}/{resource_id}")
-	public ResponseEntity<String> getResourceById(@PathVariable String dataset_id, @PathVariable String resource_id) {
+	public ResponseEntity<String> getResourceById(
+			@PathVariable String dataset_id, @PathVariable String resource_id,
+			@RequestParam Map<String,String> params) {
 
-		String result = ckanService.getResourceById(dataset_id, resource_id);
+		String result = ckanService.getResourceById(dataset_id, resource_id, params);
 		if(result == null)
 			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 		else

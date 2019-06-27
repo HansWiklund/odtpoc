@@ -10,10 +10,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class CKANResult {
 
 	@JsonProperty("include_total")
-	Boolean includeTotal;
+	private Boolean includeTotal;
 	
 	@JsonProperty("resource_id")
-	String resourceId;
+	private String resourceId;
 	
 	private Set<FieldType> fields = new HashSet<>();
 
@@ -22,12 +22,13 @@ public class CKANResult {
 	
 	private List<Map<String, ?>> records;
 	
-	Integer limit;
+	private Integer limit;
+	private Integer offset;
 	
-	Integer total;
+	private Integer total;
 	
 	@JsonProperty("_links")
-	LinkType links;
+	private LinkType links;
 
 	public Boolean getIncludeTotal() {
 		return includeTotal;
@@ -92,7 +93,13 @@ public class CKANResult {
 	public void setLinks(LinkType links) {
 		this.links = links;
 	}
-	
-	
-	
+
+	public Integer getOffset() {
+		return offset;
+	}
+
+	public void setOffset(Integer offset) {
+		this.offset = offset;
+	}
+		
 }

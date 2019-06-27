@@ -2,9 +2,9 @@ package se.inera.odp.request;
 
 public class CKANResponse {
 
-	String help;
-	Boolean success;
-	CKANResult result;
+	private String help;
+	private Boolean success;
+	private CKANResult result;
 	
 	public String getHelp() {
 		return help;
