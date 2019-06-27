@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
@@ -60,9 +63,40 @@ public class ODPService {
 		return (Map<String, Object>)map.get("result");
 	}
 	
-	public void createData(String auth, String contentType, String data)
+	@SuppressWarnings("unchecked")
+	public void createData(String auth, String contentType, String data) throws IOException
 	{
-		ckanClient.createResource(auth, contentType, data);
+		// Kör en resource_search
+		Map<String, Object> map = mapper.readValue(data, Map.class);
+		Map<String, Object> innerMap = (Map<String, Object>)map.get("resource");
+		String hashName = (String)innerMap.get("hash");
+		ResponseEntity<String> result = ckanClient.getResourceForId(hashName);
+		
+		Map<String, Object> returnMap = mapper.readValue(result.getBody(), Map.class);
+		Map<String, Object> resultInnerMap = (Map<String, Object>)returnMap.get("result");
+		int count = (int)resultInnerMap.get("count");
+		
+		if (count > 0)
+		{
+			System.out.println("count > 0");
+			// Plocka ut gammalt resourceId
+			List<?> tmpList = (List<?>)resultInnerMap.get("results");
+			int lastindex = tmpList.size()-1;
+			Map<String, String> resultsMap = (Map<String, String>)tmpList.get(lastindex);
+			String oldResourceId = resultsMap.get("id");
+			
+			// Lägg till ny resurs
+			ckanClient.createResource(auth, contentType, data);
+			
+			// Ta bort gammal resurs
+			ckanClient.deleteResource(auth, contentType, oldResourceId);
+		}
+		else 
+		{
+			System.out.println("count inte större än 0");
+			// Lägg till ny resurs
+			ckanClient.createResource(auth, contentType, data);
+		}
 	}
 	
 }

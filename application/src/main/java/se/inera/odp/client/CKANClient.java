@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -20,9 +19,13 @@ public class CKANClient {
 	private String CKAN_DATASTORE_CREATE_URL;
 		
 	// URL for deleting a resource from CKAN
-	@Value("${ckan.datastore.url}/action/resource_delete?id=")
+	@Value("${ckan.datastore.url}/action/resource_delete")
 	private String CKAN_RESOURCE_DELETE_URL;
-			
+	
+	// URL for searching for a resource in CKAN
+	@Value("${ckan.datastore.url}/action/resource_search?query=hash:")
+	private String CKAN_RESOURCE_SEARCH_URL;
+	
 	// The maximum number of posts to retrieve from a CKAN resource in one single request.
 	@Value("${ckan.datastore.search.limit}")
 	private String CKAN_DATASTORE_SEARCH_LIMIT;
@@ -55,6 +58,12 @@ public class CKANClient {
 			return null;
 		return restTemplate.getForEntity(CKAN_DATASTORE_SEARCH_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
+	
+	public ResponseEntity<String> getResourceForId(String hashName) {
+		if(hashName == null)
+			return null;
+		return restTemplate.getForEntity(CKAN_RESOURCE_SEARCH_URL + hashName, String.class);	
+	}
 
 	// TODO:
 	public void createResource(String auth, String contentType, String data) {
@@ -74,11 +83,17 @@ public class CKANClient {
 	}
 
 	// TODO:
-	public void deleteResource(String data) {
-		restTemplate.delete(CKAN_RESOURCE_DELETE_URL);
+	public void deleteResource(String auth, String contentType, String id) {
+		
+		String resourceToDelete = "{\"id\":\"" + id + "\"}";
+		
+		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
+		headers.add("Authorization", auth);
+		headers.add("Content-Type", contentType);
+		
+		HttpEntity<?> request = new HttpEntity<String>(resourceToDelete, headers);
+		
+		restTemplate.postForObject(CKAN_RESOURCE_DELETE_URL, request, String.class);
 	}
 
-
-
-	
 }
