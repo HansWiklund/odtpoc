@@ -1,5 +1,7 @@
 package se.inera.odp.controller;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +22,23 @@ public class ODPController {
 	@Autowired
 	ODPService ckanService;
 	
-	@GetMapping("/get/{id}")
-	public ResponseEntity<String> getDataById(@PathVariable String id) {
+	@GetMapping("/get/{dataset_id}/{resource_id}")
+	public ResponseEntity<String> getResourceById(
+			@PathVariable String dataset_id, @PathVariable String resource_id,
+			@RequestParam Map<String,String> params) {
 
-		String result = ckanService.getResourceById(id);
+		String result = ckanService.getResourceById(dataset_id, resource_id, params);
 		if(result == null)
 			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 		else
 			return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
-	@PostMapping("/save")
-	public ResponseEntity<?> createData(@RequestHeader(value="Authorization") String auth, @RequestHeader(value="Content-Type") String contentType, @RequestBody String data) {
+	@PostMapping(value="/save")
+	public ResponseEntity<?> createResource(@RequestHeader(value="Authorization") String auth, @RequestHeader(value="Content-Type") String contentType, @RequestBody String data) {
 
 		try {
-			ckanService.createData(auth, contentType, data);
+			ckanService.createResource(auth, contentType, data);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -42,4 +46,9 @@ public class ODPController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
 		}
 	}
+	
+	@GetMapping("/ping")
+	public ResponseEntity<String> getPingResponse() {
+		return new ResponseEntity<String>("OK", HttpStatus.NOT_FOUND);
+	}	
 }
