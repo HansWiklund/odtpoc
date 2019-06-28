@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
@@ -82,10 +85,12 @@ public class ODPService {
 		return (Map<String, Object>)map.get("result");
 	}
 	
-
+<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
-	public void createResource(String auth, String contentType, String data) throws IOException
-
+	public void createData(String auth, String contentType, String data) throws IOException
+=======
+	public void createResource(String auth, String contentType, String data)
+>>>>>>> 5db15badbc10555302129c8b2dafd26aaf8367df
 	{
 		// Kör en resource_search
 		Map<String, Object> map = mapper.readValue(data, Map.class);
@@ -99,6 +104,7 @@ public class ODPService {
 		
 		if (count > 0)
 		{
+			System.out.println("count > 0");
 			// Plocka ut gammalt resourceId
 			List<?> tmpList = (List<?>)resultInnerMap.get("results");
 			int lastindex = tmpList.size()-1;
@@ -113,6 +119,7 @@ public class ODPService {
 		}
 		else 
 		{
+			System.out.println("count inte större än 0");
 			// Lägg till ny resurs
 			ckanClient.createResource(auth, contentType, data);
 		}

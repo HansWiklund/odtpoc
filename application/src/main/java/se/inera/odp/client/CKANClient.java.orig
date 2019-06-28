@@ -143,4 +143,9 @@ public class CKANClient {
 		restTemplate.postForObject(CKAN_RESOURCE_DELETE_URL, request, String.class);
 	}
 
+<<<<<<< HEAD
+=======
+ 
+	
+>>>>>>> 5db15badbc10555302129c8b2dafd26aaf8367df
 }
