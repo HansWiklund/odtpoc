@@ -1,10 +1,13 @@
 package se.inera.odp.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,28 @@ import se.inera.odp.request.ODPResponse;
 @Service
 public class ODPService {
 
+	// Supported ckan query parameters
+	private static final ArrayList<String> qparams = new ArrayList<>(
+			Arrays.asList(
+					"limit", 
+					"offset", 
+					"fields", 
+					"sort"
+				));
+	
+	// Not supported ckan query parameters
+	private static final ArrayList<String> uparams = new ArrayList<>(
+			Arrays.asList(	
+				"resource_id",
+				"filters",
+				"q",
+				"distinct", 
+				"plain",
+				"language", 
+				"include_total", 
+				"records_format"
+			));
+	
 	@Autowired
 	CKANClient ckanClient;
 
@@ -46,6 +71,7 @@ public class ODPService {
 				throw new ODPException("Resource " + resource_id + "does not exist");
 	
 			// Get result set
+			computeQuery(params);
 			ResponseEntity<CKANResponse> response = ckanClient.getData(resourceId, params, CKANResponse.class);
 			
 			CKANResponse ckanResponse = response.getBody();
@@ -67,12 +93,9 @@ public class ODPService {
 				odpResponse.setTotal(ckanResult.getTotal());
 				return mapper.writeValueAsString(odpResponse);
 			}
-			
-			
+						
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return null;
+			throw new ODPException("IOException : " + e.getMessage());
 		}
 	}
 
@@ -118,4 +141,23 @@ public class ODPService {
 		}
 	}
 	
+	private void computeQuery(Map<String, String> params) throws IOException {
+		
+		Map<String, String> filters = new HashMap<>();
+		
+		Iterator<Map.Entry<String,String>> iter = params.entrySet().iterator();
+		while (iter.hasNext()) {
+		    Map.Entry<String,String> entry = iter.next();
+			if(uparams.contains(entry.getKey())) {
+		        iter.remove();		    
+			} else if(!qparams.contains(entry.getKey())) {
+				filters.put(entry.getKey(), entry.getValue());
+		        iter.remove();
+			}
+		}
+		
+		if(filters.size()>0)
+			params.put("filters", mapper.writeValueAsString(filters));
+	}
+
 }

@@ -57,29 +57,9 @@ public class CKANClient {
 	}
 
 	public ResponseEntity<String> getData(String id, Map<String, String> params) {
-		if(id == null)
-			return null;
-		
-		if(params == null)
-			params = new HashMap<String, String>();
-		
-		params.put("id", id);
-		params.putIfAbsent("limit", CKAN_DATASTORE_SEARCH_LIMIT);
-						
-		URI uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL)
-		        .build()
-		        .toUri();
-		
-		for(String k : params.keySet())	{
-			uri = UriComponentsBuilder
-			        .fromUri(uri)
-			        .queryParam(k, params.get(k))
-			        .build()
-			        .toUri();
-			}
-
-		return restTemplate.getForEntity(uri, String.class);
-	}
+		return this.getData(id, params, String.class);
+	}			
+	
 
 	public <T> ResponseEntity<T> getData(String id, Map<String, String> params, Class<T> clazz) {
 		if(id == null)
@@ -90,18 +70,13 @@ public class CKANClient {
 		
 		params.put("id", id);
 		params.putIfAbsent("limit", CKAN_DATASTORE_SEARCH_LIMIT);
-						
-		URI uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL)
-		        .build()
-		        .toUri();
-
+		
+		UriComponentsBuilder _uri = UriComponentsBuilder.fromUriString(CKAN_DATASTORE_SEARCH_URL);
 		for(String k : params.keySet())	{
-			uri = UriComponentsBuilder
-			        .fromUri(uri)
-			        .queryParam(k, params.get(k))
-			        .build()
-			        .toUri();
-			}
+			_uri.queryParam(k, params.get(k));
+		}
+		
+		URI uri = _uri.build().toUri();
 
 		return restTemplate.getForEntity(uri, clazz);
 	}
