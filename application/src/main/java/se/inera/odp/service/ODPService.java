@@ -18,6 +18,7 @@ import se.inera.odp.client.CKANClient;
 import se.inera.odp.exception.ODPException;
 import se.inera.odp.request.CKANResponse;
 import se.inera.odp.request.CKANResult;
+import se.inera.odp.request.LinkType;
 import se.inera.odp.request.ODPResponse;
 
 @Service
@@ -76,6 +77,7 @@ public class ODPService {
 			
 			CKANResponse ckanResponse = response.getBody();
 			CKANResult ckanResult = ckanResponse.getResult();
+			
 			List<Map<String, ?>> ckanRecords = ckanResult.getRecords();
 			
 			for(Map<String, ?> rec : ckanRecords) {
@@ -87,6 +89,7 @@ public class ODPService {
 			} else {			
 				ODPResponse odpResponse = new ODPResponse();
 				odpResponse.setRecords(ckanRecords);
+				reformatLinks(ckanResult.getLinks(), dataset_id, resource_id);
 				odpResponse.setLinks(ckanResult.getLinks());
 				odpResponse.setOffset(ckanResult.getOffset());
 				odpResponse.setLimit(ckanResult.getLimit());
@@ -97,6 +100,49 @@ public class ODPService {
 		} catch (IOException e) {
 			throw new ODPException("IOException : " + e.getMessage());
 		}
+	}
+	
+	private void reformatLinks(LinkType lt, String dataset, String resource) {
+		String start = lt.getStart();
+		String next = lt.getNext();
+		String prev = lt.getPrev();
+		
+		String nextLimit = "";
+		String nextOffset = "";
+		
+		String prevLimit = "";
+		String prevOffset = "";
+		
+		if (next != null) {
+			int startIndex = next.indexOf("limit=") + 6;
+			int endIndex = next.indexOf('&');
+			nextLimit = next.substring(startIndex, endIndex);
+			startIndex = next.indexOf("offset=") + 7;
+			endIndex = next.length();
+			nextOffset = next.substring(startIndex, endIndex);
+		}
+		
+		if (prev != null) {
+			int startIndex = prev.indexOf("limit=") + 6;
+			int endIndex = prev.indexOf('&');
+			prevLimit = prev.substring(startIndex, endIndex);
+			startIndex = prev.indexOf("offset=") + 7;
+			endIndex = prev.length();
+			prevOffset = prev.substring(startIndex, endIndex);
+		}
+		
+		// Hårdkodad url. Skall sättas i application.properties innan produktion.
+		String url = "localhost:8085";
+		
+		lt.setStart(url + "/api/get/" + dataset + "/" + resource);
+		if (next != null)
+			lt.setNext(url + "/api/get/" + dataset + "/" + resource + "?limit=" + nextLimit + "&offset=" + nextOffset);
+		else 
+			lt.setNext(null);
+		if (prev != null)
+			lt.setPrev(url + "/api/get/" + dataset + "/" + resource + "?limit=" + prevLimit + "&offset=" + prevOffset);
+		else
+			lt.setPrev(null);
 	}
 
 	@SuppressWarnings("unchecked")
