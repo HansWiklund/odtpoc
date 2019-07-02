@@ -103,7 +103,6 @@ public class ODPService {
 	}
 	
 	private void reformatLinks(LinkType lt, String dataset, String resource) {
-		String start = lt.getStart();
 		String next = lt.getNext();
 		String prev = lt.getPrev();
 		
