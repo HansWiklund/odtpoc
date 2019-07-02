@@ -53,11 +53,11 @@ public class ODPService {
 	ObjectMapper mapper;
 
 	@SuppressWarnings("unchecked")
-	public String getResourceById(String dataset_id, String resource_id, Map<String, String> params) {
+	public String getResourceById(String dataset_id, String resource_id, Map<String, String> params, String auth) {
 		ResponseEntity<String> result;
 		
 		try {
-			result = ckanClient.getResource(dataset_id);
+			result = ckanClient.getResource(auth, dataset_id);
 	
 			// Extrakt id of result set
 			Map<String, ?> resultMap = createResultAsMap(result.getBody());
@@ -73,7 +73,7 @@ public class ODPService {
 	
 			// Get result set
 			computeQuery(params);
-			ResponseEntity<CKANResponse> response = ckanClient.getData(resourceId, params, CKANResponse.class);
+			ResponseEntity<CKANResponse> response = ckanClient.getData(auth, resourceId, params, CKANResponse.class);
 			
 			CKANResponse ckanResponse = response.getBody();
 			CKANResult ckanResult = ckanResponse.getResult();
@@ -158,7 +158,7 @@ public class ODPService {
 			Map<String, Object> map = mapper.readValue(data, Map.class);
 			Map<String, Object> innerMap = (Map<String, Object>)map.get("resource");
 			String hashName = (String)innerMap.get("hash");
-			ResponseEntity<String> result = ckanClient.getResourceForId(hashName);
+			ResponseEntity<String> result = ckanClient.getResourceForId(auth, hashName);
 			
 			Map<String, Object> returnMap = mapper.readValue(result.getBody(), Map.class);
 			Map<String, Object> resultInnerMap = (Map<String, Object>)returnMap.get("result");

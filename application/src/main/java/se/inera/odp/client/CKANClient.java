@@ -7,14 +7,13 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import se.inera.odp.core.exception.ODPAuthorizationException;
+import static se.inera.odp.core.utils.ClientUtil.createHeaders;
 
 @Service
 public class CKANClient {
@@ -52,18 +51,16 @@ public class CKANClient {
 	RestTemplate restTemplate;
 
 	// TODO
-	public ResponseEntity<String> getResource(String id) {
+	public ResponseEntity<String> getResource(String auth, String id) {
 		if(id == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_PACKAGE_SHOW_URL, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
+
+		HttpEntity<String> request = new HttpEntity<String>(createHeaders(auth));
+		
+		return restTemplate.exchange(CKAN_PACKAGE_SHOW_URL, HttpMethod.GET, request, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
-	public ResponseEntity<String> getData(String id, Map<String, String> params) {
-		return this.getData(id, params, String.class);
-	}			
-	
-
-	public <T> ResponseEntity<T> getData(String id, Map<String, String> params, Class<T> clazz) {
+	public <T> ResponseEntity<T> getData(String auth, String id, Map<String, String> params, Class<T> clazz) {
 		if(id == null)
 			return null;
 		
@@ -80,41 +77,34 @@ public class CKANClient {
 		
 		URI uri = _uri.build().toUri();
 
-		return restTemplate.getForEntity(uri, clazz);
+		HttpEntity<String> request = new HttpEntity<String>(createHeaders(auth));
+		
+		return restTemplate.exchange(uri, HttpMethod.GET, request, clazz);
 	}
 	
-	public ResponseEntity<String> getResourceForId(String hashName) {
+	public ResponseEntity<String> getResourceForId(String auth, String hashName) {
 		if(hashName == null)
 			return null;
-		return restTemplate.getForEntity(CKAN_RESOURCE_SEARCH_URL + hashName, String.class);	
+		HttpEntity<String> request = new HttpEntity<String>(createHeaders(auth));
+		return restTemplate.exchange(CKAN_RESOURCE_SEARCH_URL + hashName, HttpMethod.GET, request, String.class);	
 	}
 
 	public void createResource(String auth, String data) {
 		
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
-		headers.add("Authorization", auth);
-		headers.add("Content-Type", "application/json");
-		
-		HttpEntity<String> request = new HttpEntity<String>(data, headers);
-		System.out.println(data);
+		HttpEntity<String> request = new HttpEntity<String>(data, createHeaders(auth));
+
 		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, HttpEntity.class);
 	}
 	
-	// TODO:
 	public void updateResource(String data) {
 		restTemplate.postForEntity(CKAN_DATASTORE_UPDATE_URL, data, String.class);
 	}
 
-	// TODO:
 	public void deleteResource(String auth, String id) {
 		
 		String resourceToDelete = "{\"id\":\"" + id + "\"}";
 		
-		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
-		headers.add("Authorization", auth);
-		headers.add("Content-Type", "application/json");
-		
-		HttpEntity<?> request = new HttpEntity<String>(resourceToDelete, headers);
+		HttpEntity<?> request = new HttpEntity<String>(resourceToDelete, createHeaders(auth));
 		
 		restTemplate.postForObject(CKAN_RESOURCE_DELETE_URL, request, String.class);
 	}

@@ -11,6 +11,8 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import static se.inera.odp.core.utils.ClientUtil.createHeaders;
+
 @Service
 public class AdapterClient {
 
@@ -23,15 +25,9 @@ public class AdapterClient {
 	RestTemplate restTemplate;
 
 	// Send data to ckan
-	public <T> void createResource(HttpHeaders headers, T data, Class clazz) {
+	public <T> void createResource(String auth, HttpHeaders headers, T data, Class clazz) {
 		
-		
-		MultiValueMap<String, String> headersMap = new LinkedMultiValueMap<String, String>();
-		headersMap.add("Authorization", "abc123");
-		headersMap.add("Content-Type", "application/json");
-		
-		headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-		HttpEntity<T> request = new HttpEntity<T>(data, headersMap);
+		HttpEntity<T> request = new HttpEntity<T>(data, createHeaders(auth));
 		restTemplate.postForEntity(SERVER_CREATE_URL, request, clazz);
 	}
 	

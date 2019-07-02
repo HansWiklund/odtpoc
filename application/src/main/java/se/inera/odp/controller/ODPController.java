@@ -24,12 +24,13 @@ public class ODPController {
 	
 	@GetMapping("/get/{dataset_id}/{resource_id}")
 	public ResponseEntity<String> getResourceById(
+			@RequestHeader(value="Authorization", required=false ) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestParam Map<String,String> params) {
 
 		String result;
 		try {
-			result = ckanService.getResourceById(dataset_id, resource_id, params);
+			result = ckanService.getResourceById(dataset_id, resource_id, params, auth);
 			if(result == null)
 				return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
 			else

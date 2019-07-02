@@ -29,85 +29,85 @@ public class MockAdapterService {
 
 	private static final String KIK_CODES_DEFINITION = "kik/definition_kik_v1_codes.json";
 	
-	public void saveResource(Codes data, HttpHeaders headers) {	
+	public void saveResource(String auth, Codes data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<CodeType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getCode());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(CodeSystems data, HttpHeaders headers) {	
+	public void saveResource(String auth, CodeSystems data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<CodeSystemType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getCodeSystem());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(Measures data, HttpHeaders headers) {	
+	public void saveResource(String auth, Measures data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<MeasureType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getMeasure());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(MeasureFormerVersions data, HttpHeaders headers) {	
+	public void saveResource(String auth, MeasureFormerVersions data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<MeasureFormerVersionType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getMeasureFormerVersion());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(TargetMeasurements data, HttpHeaders headers) {	
+	public void saveResource(String auth, TargetMeasurements data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<TargetMeasurementType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getTargetMeasurement());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(PerformingOrganizations data, HttpHeaders headers) {	
+	public void saveResource(String auth, PerformingOrganizations data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<PerformingOrganizationType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getPerformingOrganization());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}
 	}
 	
-	public void saveResource(ValueSets data, HttpHeaders headers) {	
+	public void saveResource(String auth, ValueSets data, HttpHeaders headers) {	
 		
 		try {
 			InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("kik/definition_kik_v1_codes.json");
 			ODPRequest<ValueSetType> req = mapper.readValue(is, ODPRequest.class);
 			req.setRecords(data.getValueSet());
-			adapterClient.createResource(headers, req, ODPRequest.class);
+			adapterClient.createResource(auth, headers, req, ODPRequest.class);
 		} catch (IOException e) {
 			throw new ODPException(e.getClass().getName() + ":" + e.getMessage());
 		}

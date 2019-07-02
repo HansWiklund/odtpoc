@@ -24,9 +24,9 @@ public class MockAdapterController {
 	MockAdapterService mockAdapterService;
 	
 	@PostMapping(value="codes", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody Codes data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody Codes data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(RuntimeException e) {
@@ -36,9 +36,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="codeSystems", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody CodeSystems data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody CodeSystems data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -48,9 +48,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="measures", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody Measures data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody Measures data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -60,9 +60,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="measureFormerVersions", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody MeasureFormerVersions data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody MeasureFormerVersions data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -72,9 +72,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="performingOrganizations", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody PerformingOrganizations data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody PerformingOrganizations data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -84,9 +84,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="targetMeasurements", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody TargetMeasurements data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody TargetMeasurements data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
@@ -96,9 +96,9 @@ public class MockAdapterController {
 	}
 	
 	@PostMapping(value="valueSets", consumes=MediaType.APPLICATION_XML_VALUE)
-	public ResponseEntity<?> createData(@RequestBody ValueSets data, @RequestHeader HttpHeaders headers) {
+	public ResponseEntity<?> createData(@RequestHeader(value="Authorization", required=false ) String auth, @RequestBody ValueSets data, @RequestHeader HttpHeaders headers) {
 		try {
-			mockAdapterService.saveResource(data, headers);
+			mockAdapterService.saveResource(auth, data, headers);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
 		} catch(Exception e) {
