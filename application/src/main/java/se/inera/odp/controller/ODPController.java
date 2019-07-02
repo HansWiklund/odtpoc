@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import se.inera.odp.exception.ODPAuthorizationException;
 import se.inera.odp.service.ODPService;
 
 // @RequestMapping(value = "/greeting", method = POST, consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -27,23 +28,33 @@ public class ODPController {
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestParam Map<String,String> params) {
 
-		String result = ckanService.getResourceById(dataset_id, resource_id, params);
-		if(result == null)
-			return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
-		else
-			return new ResponseEntity<String>(result, HttpStatus.OK);
+		String result;
+		try {
+			result = ckanService.getResourceById(dataset_id, resource_id, params);
+			if(result == null)
+				return new ResponseEntity<String>(result, HttpStatus.NOT_FOUND);
+			else
+				return new ResponseEntity<String>(result, HttpStatus.OK);
+		} catch(Exception e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);			
+		}
 	}
 	
 	@PostMapping(value="/save")
-	public ResponseEntity<?> createResource(@RequestHeader(value="Authorization") String auth, @RequestHeader(value="Content-Type") String contentType, @RequestBody String data) {
-
+	public ResponseEntity<?> createResource(
+			@RequestHeader(value="Authorization", required=false ) String auth, 
+			@RequestBody String data) {
+ 
+		if(auth == null)
+			throw new ODPAuthorizationException();
+			
 		try {
-			ckanService.createResource(auth, contentType, data);
+			ckanService.createResource(auth, data);
 			logger.info("Request was succesfully saved!");
 			return ResponseEntity.status(HttpStatus.CREATED).body(null);
-		} catch(Exception e) {
+		} catch(RuntimeException e) {
 			logger.error("An error occured during save", e);
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+			throw e;
 		}
 	}
 	

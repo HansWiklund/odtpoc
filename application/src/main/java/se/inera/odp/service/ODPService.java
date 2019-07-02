@@ -68,7 +68,7 @@ public class ODPService {
 			if(resource.isPresent())
 				resourceId = resource.get().get("id");
 			else
-				throw new ODPException("Resource " + resource_id + "does not exist");
+				throw new ODPException("Resource " + resource_id + " does not exist");
 	
 			// Get result set
 			computeQuery(params);
@@ -82,7 +82,7 @@ public class ODPService {
 				rec.remove("_id");
 			}
 			
-			if(ckanResult.getTotal() == ckanRecords.size()) {
+		if(ckanResult.getTotal() == ckanRecords.size()) {
 				return mapper.writeValueAsString(ckanRecords);				
 			} else {			
 				ODPResponse odpResponse = new ODPResponse();
@@ -107,37 +107,39 @@ public class ODPService {
 	
 
 	@SuppressWarnings("unchecked")
-	public void createResource(String auth, String contentType, String data) throws IOException
-
-	{
-		// Kör en resource_search
-		Map<String, Object> map = mapper.readValue(data, Map.class);
-		Map<String, Object> innerMap = (Map<String, Object>)map.get("resource");
-		String hashName = (String)innerMap.get("hash");
-		ResponseEntity<String> result = ckanClient.getResourceForId(hashName);
-		
-		Map<String, Object> returnMap = mapper.readValue(result.getBody(), Map.class);
-		Map<String, Object> resultInnerMap = (Map<String, Object>)returnMap.get("result");
-		int count = (int)resultInnerMap.get("count");
-		
-		if (count > 0)
-		{
-			// Plocka ut gammalt resourceId
-			List<?> tmpList = (List<?>)resultInnerMap.get("results");
-			int lastindex = tmpList.size()-1;
-			Map<String, String> resultsMap = (Map<String, String>)tmpList.get(lastindex);
-			String oldResourceId = resultsMap.get("id");
+	public void createResource(String auth, String data) {
+		try {
+			// Kör en resource_search
+			Map<String, Object> map = mapper.readValue(data, Map.class);
+			Map<String, Object> innerMap = (Map<String, Object>)map.get("resource");
+			String hashName = (String)innerMap.get("hash");
+			ResponseEntity<String> result = ckanClient.getResourceForId(hashName);
 			
-			// Lägg till ny resurs
-			ckanClient.createResource(auth, contentType, data);
+			Map<String, Object> returnMap = mapper.readValue(result.getBody(), Map.class);
+			Map<String, Object> resultInnerMap = (Map<String, Object>)returnMap.get("result");
+			int count = (int)resultInnerMap.get("count");
 			
-			// Ta bort gammal resurs
-			ckanClient.deleteResource(auth, contentType, oldResourceId);
-		}
-		else 
-		{
-			// Lägg till ny resurs
-			ckanClient.createResource(auth, contentType, data);
+			if (count > 0)
+			{
+				// Plocka ut gammalt resourceId
+				List<?> tmpList = (List<?>)resultInnerMap.get("results");
+				int lastindex = tmpList.size()-1;
+				Map<String, String> resultsMap = (Map<String, String>)tmpList.get(lastindex);
+				String oldResourceId = resultsMap.get("id");
+				
+				// Lägg till ny resurs
+				ckanClient.createResource(auth, data);
+				
+				// Ta bort gammal resurs
+				ckanClient.deleteResource(auth, oldResourceId);
+			}
+			else 
+			{
+				// Lägg till ny resurs
+				ckanClient.createResource(auth, data);
+			}
+		} catch(IOException e) {
+			throw new ODPException("IOException : " + e.getMessage());			
 		}
 	}
 	

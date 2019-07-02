@@ -14,6 +14,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import se.inera.odp.exception.ODPAuthorizationException;
+
 @Service
 public class CKANClient {
 
@@ -87,16 +89,15 @@ public class CKANClient {
 		return restTemplate.getForEntity(CKAN_RESOURCE_SEARCH_URL + hashName, String.class);	
 	}
 
-	// TODO:
-	public void createResource(String auth, String contentType, String data) {
+	public void createResource(String auth, String data) {
 		
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
 		headers.add("Authorization", auth);
-		headers.add("Content-Type", contentType);
+		headers.add("Content-Type", "application/json");
 		
-		HttpEntity<?> request = new HttpEntity<String>(data, headers);
-		
-		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, String.class);
+		HttpEntity<String> request = new HttpEntity<String>(data, headers);
+		System.out.println(data);
+		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, HttpEntity.class);
 	}
 	
 	// TODO:
@@ -105,13 +106,13 @@ public class CKANClient {
 	}
 
 	// TODO:
-	public void deleteResource(String auth, String contentType, String id) {
+	public void deleteResource(String auth, String id) {
 		
 		String resourceToDelete = "{\"id\":\"" + id + "\"}";
 		
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
 		headers.add("Authorization", auth);
-		headers.add("Content-Type", contentType);
+		headers.add("Content-Type", "application/json");
 		
 		HttpEntity<?> request = new HttpEntity<String>(resourceToDelete, headers);
 		
