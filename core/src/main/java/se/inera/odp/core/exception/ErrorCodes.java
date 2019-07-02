@@ -1,4 +1,4 @@
-package se.inera.odp.exception;
+package se.inera.odp.core.exception;
 
 public class ErrorCodes {
 

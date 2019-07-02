@@ -13,8 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import opendata.followup.groupoutcomes.qualitymeasures._2.*;
 import se.inera.odp.client.AdapterClient;
-import se.inera.odp.exception.ODPException;
-import se.inera.odp.request.ODPRequest;
+import se.inera.odp.core.exception.ODPException;
+import se.inera.odp.core.request.ODPRequest;
 
 @Service
 public class MockAdapterService {

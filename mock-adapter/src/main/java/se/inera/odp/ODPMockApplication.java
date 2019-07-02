@@ -3,7 +3,7 @@ package se.inera.odp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages= {"se.inera.odp", "se.inera.odp.*"})
+@SpringBootApplication(scanBasePackages= {"se.inera.odp", "se.inera.odp.*", "se.inera.odp.core.*"})
 public class ODPMockApplication {
 
  

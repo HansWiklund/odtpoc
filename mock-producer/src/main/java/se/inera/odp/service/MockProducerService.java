@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import opendata.followup.groupoutcomes.qualitymeasures._2.*;
-import se.inera.odp.exception.ODPException;
+import se.inera.odp.core.exception.ODPException;
+import se.inera.odp.core.request.ODPRequest;
 import se.inera.odp.mock.producer.client.MockProducerClient;
-import se.inera.odp.request.ODPRequest;
 
 @Service
 public class MockProducerService {

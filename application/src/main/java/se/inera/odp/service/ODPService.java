@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
-import se.inera.odp.exception.ODPException;
-import se.inera.odp.request.CKANResponse;
-import se.inera.odp.request.CKANResult;
-import se.inera.odp.request.LinkType;
-import se.inera.odp.request.ODPResponse;
+import se.inera.odp.core.exception.ODPException;
+import se.inera.odp.core.request.CKANResponse;
+import se.inera.odp.core.request.CKANResult;
+import se.inera.odp.core.request.LinkType;
+import se.inera.odp.core.request.ODPResponse;
 
 @Service
 public class ODPService {

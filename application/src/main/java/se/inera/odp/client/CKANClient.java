@@ -14,7 +14,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import se.inera.odp.exception.ODPAuthorizationException;
+import se.inera.odp.core.exception.ODPAuthorizationException;
 
 @Service
 public class CKANClient {

@@ -1,4 +1,4 @@
-package se.inera.odp.request;
+package se.inera.odp.core.request;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
