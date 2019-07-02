@@ -12,8 +12,7 @@
          <c:active>true</c:active>
          <c:codeId>Målnivå Socialstyrelsen</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin målnivå Socialstyrelsen innefattar alla indikatorer som Socialstyrelsen har satt kvantifierade målnivåer för i sina nationella riktlinjer.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin målnivå Socialstyrelsen innefattar alla indikatorer som Socialstyrelsen har satt kvantifierade målnivåer för i sina nationella riktlinjer.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Målnivå Socialstyrelsen</c:displayName>
          <c:id>01b26d6c-b20d-415f-9dc3-5527e5f599a9</c:id>
       </c:code>
@@ -69,8 +68,7 @@
          <c:active>true</c:active>
          <c:codeId>Gynekologi</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Gynekologi utgör tillsammans med obstetrik verksamhetsområdet kvinnosjukvård och de flesta gynekologer är även obstetriker. Gynekologi är den specialitet som studerar sjukdomar i kvinnans könsorgan, exempelvis livmoder, vagina och äggstockar.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Gynekologi utgör tillsammans med obstetrik verksamhetsområdet kvinnosjukvård och de flesta gynekologer är även obstetriker. Gynekologi är den specialitet som studerar sjukdomar i kvinnans könsorgan, exempelvis livmoder, vagina och äggstockar.&lt;/p&gt;</c:definition>
          <c:displayName>Gynekologi</c:displayName>
          <c:id>10fee80c-8132-4bc5-9bb4-85c1de7a6ea9</c:id>
       </c:code>
@@ -94,8 +92,7 @@
          <c:active>true</c:active>
          <c:codeId>Patientrapporterade resultat</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin patientrapporterade resultat innefattar alla indikatorer där patineterna har rapporterat någon form av resultat av sin behandling.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin patientrapporterade resultat innefattar alla indikatorer där patineterna har rapporterat någon form av resultat av sin behandling.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Patientrapporterade resultat</c:displayName>
          <c:id>1a3951d1-3eb8-4b0b-ae6d-6a94d46c964d</c:id>
       </c:code>
@@ -111,8 +108,7 @@
          <c:active>true</c:active>
          <c:codeId>Patienterfarenheter</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin patienterfarenheter innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter patienternas erfarenheter.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin patienterfarenheter innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter patienternas erfarenheter.&lt;/p&gt;</c:definition>
          <c:displayName>Patienterfarenheter</c:displayName>
          <c:id>20ffa795-1529-47bd-bdad-0ef5a1c74ebb</c:id>
       </c:code>
@@ -136,8 +132,7 @@
          <c:active>true</c:active>
          <c:codeId>Vaccinationer och screening</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Vaccinationer och screening&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Vaccinationer och screening&lt;/p&gt;</c:definition>
          <c:displayName>Vaccinationer och screening</c:displayName>
          <c:id>2494d488-fa2a-4069-918d-1c29362b1252</c:id>
       </c:code>
@@ -185,8 +180,7 @@
          <c:active>true</c:active>
          <c:codeId>Infektionssjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Det primära omhändertagandet vid exempelvis svår sepsis eller meningit, är helt avgörande för patientens chanser att överleva. Svår sepsis är vanligare än både akut ST-höjningsinfarkt och lungemboli och dödligheten är minst lika hög.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Det primära omhändertagandet vid exempelvis svår sepsis eller meningit, är helt avgörande för patientens chanser att överleva. Svår sepsis är vanligare än både akut ST-höjningsinfarkt och lungemboli och dödligheten är minst lika hög.&lt;/p&gt;</c:definition>
          <c:displayName>Infektionssjukdom</c:displayName>
          <c:id>2e25cae5-793a-4d9f-bf8c-36142186c798</c:id>
       </c:code>
@@ -210,8 +204,7 @@
          <c:active>true</c:active>
          <c:codeId>Förtroende för hälso- och sjukvården</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin&amp;nbsp;förtroende för hälso- och sjukvården&amp;nbsp;innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter befolkningens förtroende.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin&amp;nbsp;förtroende för hälso- och sjukvården&amp;nbsp;innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som mäter befolkningens förtroende.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Förtroende för hälso- och sjukvården</c:displayName>
          <c:id>2fab92af-5123-4d87-8605-4a80c0e613ec</c:id>
       </c:code>
@@ -235,8 +228,7 @@
          <c:active>true</c:active>
          <c:codeId>Psykisk ohälsa</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Den psykiatriska vården kan vara öppen eller sluten. Öppenvård förekommer när en patient är så pass frisk och klar i sinnet att denne kan ta eget ansvar för sin förbättring&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Den psykiatriska vården kan vara öppen eller sluten. Öppenvård förekommer när en patient är så pass frisk och klar i sinnet att denne kan ta eget ansvar för sin förbättring&lt;/p&gt;</c:definition>
          <c:displayName>Psykisk ohälsa</c:displayName>
          <c:id>33527b23-fc22-49d3-8b37-b0c8604054fe</c:id>
       </c:code>
@@ -244,8 +236,7 @@
          <c:active>true</c:active>
          <c:codeId>Palliativ vård</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Vissa människor lever med en obotlig sjukdom i åtskilliga år, medan andra är fria från symtomgivande sjukdom ända till det är mycket kort tid kvar att leva. Det är därmed viktigt att konstatera att palliativ vård är &amp;nbsp;mer än vård i livets sista veckor.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Vissa människor lever med en obotlig sjukdom i åtskilliga år, medan andra är fria från symtomgivande sjukdom ända till det är mycket kort tid kvar att leva. Det är därmed viktigt att konstatera att palliativ vård är &amp;nbsp;mer än vård i livets sista veckor.&lt;/p&gt;</c:definition>
          <c:displayName>Palliativ vård</c:displayName>
          <c:id>358a42f5-e2fc-4d15-805a-d69a8d24792c</c:id>
       </c:code>
@@ -261,8 +252,7 @@
          <c:active>true</c:active>
          <c:codeId>Kärlkirurgi</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;</c:definition>
          <c:displayName>Kärlkirurgi</c:displayName>
          <c:id>3870c0b4-5032-4658-be3f-19d321164c80</c:id>
       </c:code>
@@ -270,8 +260,7 @@
          <c:active>true</c:active>
          <c:codeId>Allmän kirurgi</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kirurgiska ingrepp brukar kallas operation och kan ha som syfte att laga invärtes delar av kroppen, avlägsna sjuk vävnad eller att sätta in något, exempelvis en pacemaker.&lt;/p&gt;</c:definition>
          <c:displayName>Allmän kirurgi</c:displayName>
          <c:id>3ad5e3b7-f99b-4d64-9c33-fe5fee1cdd81</c:id>
       </c:code>
@@ -279,8 +268,7 @@
          <c:active>true</c:active>
          <c:codeId>Övervikt och fetma</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Fetma är en vanlig sjukdom som kan uppstå när man äter mer än vad man förbränner. Orsaken till fetma kan till exempel vara livsstil, miljö och ärftlighet. Fetma belastar och anstränger kroppen vilket ökar risken för att få andra sjukdomar.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Fetma är en vanlig sjukdom som kan uppstå när man äter mer än vad man förbränner. Orsaken till fetma kan till exempel vara livsstil, miljö och ärftlighet. Fetma belastar och anstränger kroppen vilket ökar risken för att få andra sjukdomar.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Övervikt och fetma</c:displayName>
          <c:id>3d617eb8-a854-4274-9909-d09a93a07ffe</c:id>
       </c:code>
@@ -288,8 +276,7 @@
          <c:active>true</c:active>
          <c:codeId>Habilitering</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Habilitering ska ge den som är funktionsnedsatt stöd för att kunna leva ett så självständigt liv som möjligt. Stödet ska anpassas medicinskt, psykologiskt, socialt och pedagogiskt utifrån individens behov.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Habilitering ska ge den som är funktionsnedsatt stöd för att kunna leva ett så självständigt liv som möjligt. Stödet ska anpassas medicinskt, psykologiskt, socialt och pedagogiskt utifrån individens behov.&lt;/p&gt;</c:definition>
          <c:displayName>Habilitering</c:displayName>
          <c:id>3ec2ad93-e6ce-43c0-9868-bfdba7ca800a</c:id>
       </c:code>
@@ -361,8 +348,7 @@
          <c:active>true</c:active>
          <c:codeId>Läkemedelsbehandling</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin läkemedelsbehandling innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som avser att mäta läkemedelsbehandling.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin läkemedelsbehandling innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som avser att mäta läkemedelsbehandling.&lt;/p&gt;</c:definition>
          <c:displayName>Läkemedelsbehandling</c:displayName>
          <c:id>5e44658f-0121-452a-96b5-5f6cf7ef116f</c:id>
       </c:code>
@@ -370,8 +356,7 @@
          <c:active>true</c:active>
          <c:codeId>Graviditet, förlossnings- och nyfödda</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;I Sverige sker närmare 100 000 förlossningar varje år. I ett långt perspektiv har det skett oerhörda förbättringar av hälsan för både kvinnor och barn i samband med graviditet och förlossning.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;I Sverige sker närmare 100 000 förlossningar varje år. I ett långt perspektiv har det skett oerhörda förbättringar av hälsan för både kvinnor och barn i samband med graviditet och förlossning.&lt;/p&gt;</c:definition>
          <c:displayName>Graviditet, förlossnings- och nyfödda</c:displayName>
          <c:id>5fcd3a57-6698-4fb3-b356-ef893dbd4f95</c:id>
       </c:code>
@@ -379,8 +364,7 @@
          <c:active>true</c:active>
          <c:codeId>Barn och unga</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin sjukvård av barn och unga innefattar all sorts sjukvård som har med barn och unga att göra akut som planerad inom alla olika medicinska specialiteter.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin sjukvård av barn och unga innefattar all sorts sjukvård som har med barn och unga att göra akut som planerad inom alla olika medicinska specialiteter.&lt;/p&gt;</c:definition>
          <c:displayName>Barn och unga</c:displayName>
          <c:id>5fd8eb7c-07cc-4b27-a7d2-c2cb2fd8f132</c:id>
       </c:code>
@@ -444,8 +428,7 @@
          <c:active>true</c:active>
          <c:codeId>Öron-Näsa-Hals</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Det är mycket vanligt med ont i halsen och det finns många orsaker till halsont. Vanligast är ändå ont i halsen i samband med en vanlig förkylning eller influensa.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Det är mycket vanligt med ont i halsen och det finns många orsaker till halsont. Vanligast är ändå ont i halsen i samband med en vanlig förkylning eller influensa.&lt;/p&gt;</c:definition>
          <c:displayName>Öron-Näsa-Hals</c:displayName>
          <c:id>7168f115-2943-49bf-a22a-abd8812c34d3</c:id>
       </c:code>
@@ -485,8 +468,7 @@
          <c:active>true</c:active>
          <c:codeId>Tandvård</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Tandvård i Sverige bedrivs i dag dels av Folktandvården och dels av privattandläkare. Privattandläkarna är oftast enskilda fristående kliniker men några kedjebildningar har uppkommit sedan slutet av 1990-talet.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Tandvård i Sverige bedrivs i dag dels av Folktandvården och dels av privattandläkare. Privattandläkarna är oftast enskilda fristående kliniker men några kedjebildningar har uppkommit sedan slutet av 1990-talet.&lt;/p&gt;</c:definition>
          <c:displayName>Tandvård</c:displayName>
          <c:id>779335d8-43af-4a5d-a78d-e689211a88c7</c:id>
       </c:code>
@@ -526,8 +508,7 @@
          <c:active>true</c:active>
          <c:codeId>Intensivvård</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;På en intensivvårdsavdelning där det är högre personaltäthet och en högteknologisk miljö vårdas patienter som behöver ha mer noggrann övervakning än vad som kan ges på en vanlig vårdavdelning.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;På en intensivvårdsavdelning där det är högre personaltäthet och en högteknologisk miljö vårdas patienter som behöver ha mer noggrann övervakning än vad som kan ges på en vanlig vårdavdelning.&lt;/p&gt;</c:definition>
          <c:displayName>Intensivvård</c:displayName>
          <c:id>8b914794-50e8-4cff-8c58-671b99242417</c:id>
       </c:code>
@@ -543,8 +524,7 @@
          <c:active>true</c:active>
          <c:codeId>Reumatisk sjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;De vanligaste reumatiska åkommorna är ledgångsreumatism, artros, artrit, psoriasisartrit och fibromyalgi. Den vanligaste av alla reumatiska sjukdomar i Sverige, är artros som är en ledsjukdom.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;De vanligaste reumatiska åkommorna är ledgångsreumatism, artros, artrit, psoriasisartrit och fibromyalgi. Den vanligaste av alla reumatiska sjukdomar i Sverige, är artros som är en ledsjukdom.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Reumatisk sjukdom</c:displayName>
          <c:id>94bb83f3-65a3-447d-911f-3557c380a5bb</c:id>
       </c:code>
@@ -560,8 +540,7 @@
          <c:active>true</c:active>
          <c:codeId>Hjärtsjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Under de senaste 30&amp;ndash;35 åren har insjuknande och dödlighet i olika hjärtsjukdomar stadigt minskat i landet. Under 1980-talet gjordes stora genombrott i behandlingen av hjärtinfarkt och hjärtsvikt.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Under de senaste 30&amp;ndash;35 åren har insjuknande och dödlighet i olika hjärtsjukdomar stadigt minskat i landet. Under 1980-talet gjordes stora genombrott i behandlingen av hjärtinfarkt och hjärtsvikt.&lt;/p&gt;</c:definition>
          <c:displayName>Hjärtsjukdom</c:displayName>
          <c:id>9c7eee63-9a7b-402d-9ec7-e55ba03eaf41</c:id>
       </c:code>
@@ -569,8 +548,7 @@
          <c:active>true</c:active>
          <c:codeId>Vårdkonsumtion</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin vårdkonsumtion innefattar alla som avser att mäta befolkningens konsumtion /(nyttjande) av sjukvård.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin vårdkonsumtion innefattar alla som avser att mäta befolkningens konsumtion /(nyttjande) av sjukvård.&lt;/p&gt;</c:definition>
          <c:displayName>Vårdkonsumtion</c:displayName>
          <c:id>a02e72a4-b4ce-41c5-8ae1-640d29d8dd7e</c:id>
       </c:code>
@@ -578,8 +556,7 @@
          <c:active>true</c:active>
          <c:codeId>Dödlighet i befolkningen</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin dödlighet i befolkningen innefattar alla indikatorer som mäter dödlighet hos en viss patientgrupp eller dylikt.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin dödlighet i befolkningen innefattar alla indikatorer som mäter dödlighet hos en viss patientgrupp eller dylikt.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Dödlighet i befolkningen</c:displayName>
          <c:id>a2ac7507-7c35-44a4-96c7-ac18bc1f6b2b</c:id>
       </c:code>
@@ -643,8 +620,7 @@
          <c:active>true</c:active>
          <c:codeId>Hudsjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Hudproblem kan ha en mängd olika orsaker, som till exempel överkänslighet, ärftliga faktorer, de kan vara symtom på infektionssjukdom, tumörsjukdom, leversjukdom eller könssjukdom.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Hudproblem kan ha en mängd olika orsaker, som till exempel överkänslighet, ärftliga faktorer, de kan vara symtom på infektionssjukdom, tumörsjukdom, leversjukdom eller könssjukdom.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Hudsjukdom</c:displayName>
          <c:id>b176cb16-3477-49a7-ac4f-2dc8685a5ca7</c:id>
       </c:code>
@@ -660,8 +636,7 @@
          <c:active>true</c:active>
          <c:codeId>Astma och KOL</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Även om det finns många likheter mellan astma och KOL är det två olika sjukdomar. Astma debuterar &amp;nbsp;i tidig ålder och beror på ärftliga faktorer eller allergi. KOL debuterar efter 40 och beror oftast på rökning.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Även om det finns många likheter mellan astma och KOL är det två olika sjukdomar. Astma debuterar &amp;nbsp;i tidig ålder och beror på ärftliga faktorer eller allergi. KOL debuterar efter 40 och beror oftast på rökning.&lt;/p&gt;</c:definition>
          <c:displayName>Astma och KOL</c:displayName>
          <c:id>b1db8765-208f-4783-abb4-2a3f2e3c3d82</c:id>
       </c:code>
@@ -749,8 +724,7 @@
          <c:active>true</c:active>
          <c:codeId>Ögonsjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Ungefär 500 000 svenskar lider av någon av de mest vanliga ögonsjukdomarna, såsom glaukom (grön starr), katarakt (grå starr) och diabetesretinopati.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Ungefär 500 000 svenskar lider av någon av de mest vanliga ögonsjukdomarna, såsom glaukom (grön starr), katarakt (grå starr) och diabetesretinopati.&lt;/p&gt;</c:definition>
          <c:displayName>Ögonsjukdom</c:displayName>
          <c:id>d1fc312d-b62e-4511-a16a-24ae0f5b86dd</c:id>
       </c:code>
@@ -774,8 +748,7 @@
          <c:active>true</c:active>
          <c:codeId>Väntetider och tillgänglighet</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin väntetider och tillgänglighet innefattar alla indikatorer som avser att mäta patienternas väntetider och tillgänglighet till sjukvården.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin väntetider och tillgänglighet innefattar alla indikatorer som avser att mäta patienternas väntetider och tillgänglighet till sjukvården.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Väntetider och tillgänglighet</c:displayName>
          <c:id>d6d02166-173c-4bf0-9d25-633a4d74f1f7</c:id>
       </c:code>
@@ -791,8 +764,7 @@
          <c:active>true</c:active>
          <c:codeId>Cancer</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Cancer ger olika symptom och får olika behandlingar beroende på vilken cancersjukdom. De sju vanligaste cancersjukdomarna står för cirka 65 procent av alla cancerfall, 39 694 stycken.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Cancer ger olika symptom och får olika behandlingar beroende på vilken cancersjukdom. De sju vanligaste cancersjukdomarna står för cirka 65 procent av alla cancerfall, 39 694 stycken.&lt;/p&gt;</c:definition>
          <c:displayName>Cancer</c:displayName>
          <c:id>da02faf9-3d42-429a-8b52-6f03bcf809be</c:id>
       </c:code>
@@ -832,8 +804,7 @@
          <c:active>true</c:active>
          <c:codeId>Ortopedi</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;En tredjedel av all ohälsa och sjukfrånvaro beror på rörelseorganens sjukdomar och kostar därför samhället stora summor årligen, utöver det lidande som blir följden för de drabbade.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;En tredjedel av all ohälsa och sjukfrånvaro beror på rörelseorganens sjukdomar och kostar därför samhället stora summor årligen, utöver det lidande som blir följden för de drabbade.&lt;/p&gt;</c:definition>
          <c:displayName>Ortopedi</c:displayName>
          <c:id>e09de8ef-25fe-4eef-a28e-2bb400367306</c:id>
       </c:code>
@@ -921,8 +892,7 @@
          <c:active>true</c:active>
          <c:codeId>Neurologi</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Neurologiska sjukdomar är sjukdomar som drabbar centrala nervsystemet (hjärna och ryggmärg), perifera nervsystemet (perifera nerver inklusive kranialnerver), eller autonoma nervsystemet (delar som är lokaliserade både i centrala- och perifera nervsystemet).&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Neurologiska sjukdomar är sjukdomar som drabbar centrala nervsystemet (hjärna och ryggmärg), perifera nervsystemet (perifera nerver inklusive kranialnerver), eller autonoma nervsystemet (delar som är lokaliserade både i centrala- och perifera nervsystemet).&lt;/p&gt;</c:definition>
          <c:displayName>Neurologi</c:displayName>
          <c:id>fab7c148-c84f-49a6-aacc-018724c0663e</c:id>
       </c:code>
@@ -962,8 +932,7 @@
          <c:active>true</c:active>
          <c:codeId>Njursjukdom</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Om njurarnas funktion bara är lite nedsatt har man oftast inga symtom. En njursjukdom brukar då upptäckas genom att man lämnar blod- eller urinprover. Symtom kan vara trött, må illa och få klåda på kroppen.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Om njurarnas funktion bara är lite nedsatt har man oftast inga symtom. En njursjukdom brukar då upptäckas genom att man lämnar blod- eller urinprover. Symtom kan vara trött, må illa och få klåda på kroppen.&lt;/p&gt;</c:definition>
          <c:displayName>Njursjukdom</c:displayName>
          <c:id>fe6a7fa8-3a44-4c21-be50-b3a9d906a5ef</c:id>
       </c:code>
@@ -971,8 +940,7 @@
          <c:active>true</c:active>
          <c:codeId>Diabetes</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Diabetes är en folksjukdom med cirka 400 000 drabbade. Diabetes är egentligen inte en utan flera olika sjukdomar med högt blodsocker som det gemensamma kännetecknet. Orsakerna till att det höga blodsockret skiljer mellan de olika typerna av diabetes.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Diabetes är en folksjukdom med cirka 400 000 drabbade. Diabetes är egentligen inte en utan flera olika sjukdomar med högt blodsocker som det gemensamma kännetecknet. Orsakerna till att det höga blodsockret skiljer mellan de olika typerna av diabetes.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Diabetes</c:displayName>
          <c:id>543cea333152bd41105a9138</c:id>
       </c:code>
@@ -980,8 +948,7 @@
          <c:active>true</c:active>
          <c:codeId>STROKE</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;En stroke leder till en syrebrist i hjärnan som skadar de funktioner som styrs från området där blodproppen eller blödningen sitter. Stroke är livshotande och man behöver omedelbart få vård.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;En stroke leder till en syrebrist i hjärnan som skadar de funktioner som styrs från området där blodproppen eller blödningen sitter. Stroke är livshotande och man behöver omedelbart få vård.&lt;/p&gt;</c:definition>
          <c:displayName>Stroke</c:displayName>
          <c:id>543cea343152bd41105a9139</c:id>
       </c:code>
@@ -997,8 +964,7 @@
          <c:active>true</c:active>
          <c:codeId>Hälsoläge och levnadsvanor</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin hälsoläge och levnadsvanor innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som syftar till att mäta någon typ av hälsoläge och levnadsvanor i befolkningen.&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin hälsoläge och levnadsvanor innefattar alla indikatorer, oavsett medicinsk inriktning och patientgrupp, som syftar till att mäta någon typ av hälsoläge och levnadsvanor i befolkningen.&lt;/p&gt;</c:definition>
          <c:displayName>Hälsoläge och levnadsvanor</c:displayName>
          <c:id>543cea3d3152bd41105a913b</c:id>
       </c:code>
@@ -1014,8 +980,7 @@
          <c:active>true</c:active>
          <c:codeId>Primärvård</c:codeId>
          <c:codeSystemOID>54353f603154934aec4f4b79</c:codeSystemOID>
-         <c:definition>&lt;p&gt;Kategorin primärvård innefattar alla indikatorer som avser att mäta olika aspekter av primärvården.&amp;nbsp;&lt;/p&gt;
-</c:definition>
+         <c:definition>&lt;p&gt;Kategorin primärvård innefattar alla indikatorer som avser att mäta olika aspekter av primärvården.&amp;nbsp;&lt;/p&gt;</c:definition>
          <c:displayName>Primärvård</c:displayName>
          <c:id>543cea3f3152bd41105a913d</c:id>
       </c:code>

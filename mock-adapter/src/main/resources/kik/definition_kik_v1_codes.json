@@ -31,6 +31,5 @@
 			}
 	],
 
-	"primary_key": "id",
-	"always_strings": ["codeId"]
+	"primary_key": "id"
 }
