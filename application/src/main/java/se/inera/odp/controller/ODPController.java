@@ -1,5 +1,6 @@
 package se.inera.odp.controller;
 
+import java.io.IOException;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,4 +63,20 @@ public class ODPController {
 	public ResponseEntity<String> getPingResponse() {
 		return new ResponseEntity<String>("OK", HttpStatus.OK);
 	}	
+	
+	@DeleteMapping("/delete/{dataset_id}/{resource_id}")
+	public ResponseEntity<?> deleteResource(
+			@RequestHeader(value="Authorization") String auth, 
+			@PathVariable String dataset_id, @PathVariable String resource_id) throws IOException {
+
+			boolean bool = ckanService.deleteResource(auth, dataset_id, resource_id);
+			if (bool) {
+				return new ResponseEntity<String>(HttpStatus.OK);
+			}
+			else {
+				logger.error("An error occured during deleting resource");
+				return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+			}
+	}
+	
 }

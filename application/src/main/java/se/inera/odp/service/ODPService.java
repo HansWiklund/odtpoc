@@ -206,5 +206,20 @@ public class ODPService {
 		if(filters.size()>0)
 			params.put("filters", mapper.writeValueAsString(filters));
 	}
+	
+	@SuppressWarnings("unchecked")
+	public boolean deleteResource(String auth, String dataset_id, String resource_id) throws IOException {
+		ResponseEntity<String> result = ckanClient.getResource(auth, dataset_id);
+		Map<String, ?> resultMap = createResultAsMap(result.getBody());
+		List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");
+		Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_id.equals(r.get("name"))).findFirst();
+		Map<String, String> resourceMap = resource.get();
+		String resourceName =  resourceMap.get("name");
+		if (resourceName.equals(resource_id)) {
+			ckanClient.deleteResource(auth, resourceMap.get("id"));
+			return true;
+		}			
+		return false;
+	}
 
 }
