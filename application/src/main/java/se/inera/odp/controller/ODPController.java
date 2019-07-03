@@ -79,4 +79,20 @@ public class ODPController {
 			}
 	}
 	
+	@PutMapping("/update/{dataset_id}/{resource_id}")
+	public ResponseEntity<?> updateResource(
+			@RequestHeader(value="Authorization") String auth, 
+			@PathVariable String dataset_id, @PathVariable String resource_id,
+			@RequestBody String data) throws IOException {
+
+			boolean bool = ckanService.updateResource(auth, dataset_id, resource_id, data);
+			if (bool) {
+				return new ResponseEntity<String>(HttpStatus.OK);
+			}
+			else {
+				logger.error("An error occured during deleting resource");
+				return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+			}
+	}
+	
 }

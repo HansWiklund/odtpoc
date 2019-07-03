@@ -222,4 +222,25 @@ public class ODPService {
 		return false;
 	}
 
+	@SuppressWarnings("unchecked")
+	public boolean updateResource(String auth, String dataset_id, String resource_id, String data) throws IOException {
+		ResponseEntity<String> result = ckanClient.getResource(auth, dataset_id);
+		Map<String, ?> resultMap = createResultAsMap(result.getBody());				
+		List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");		
+		Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_id.equals(r.get("name"))).findFirst();
+		Map<String, String> resourceMap = resource.get();
+		String resourceName =  resourceMap.get("name");		
+		if (resourceName.equals(resource_id)) {			
+			StringBuilder strBldr = new StringBuilder();
+			strBldr.append("{\"resource_id\": \"" + resourceMap.get("id") + "\", \"force\": true, ");
+			int recordsIndex = data.indexOf("\"records\"");
+			int lastIndexOfCurlyBrace = data.lastIndexOf("}");
+			strBldr.append(data.substring(recordsIndex, lastIndexOfCurlyBrace));
+			strBldr.append(", \"method\" : \"upsert\" }");
+			ckanClient.updateResource(auth, strBldr.toString());
+			return true;
+		}			
+		return false;
+	}
+	
 }

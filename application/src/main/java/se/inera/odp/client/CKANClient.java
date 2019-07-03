@@ -108,5 +108,12 @@ public class CKANClient {
 		
 		restTemplate.postForObject(CKAN_RESOURCE_DELETE_URL, request, String.class);
 	}
+	
+	public void updateResource(String auth, String data) {
+		
+		HttpEntity<?> request = new HttpEntity<String>(data, createHeaders(auth));
+		
+		restTemplate.postForObject(CKAN_DATASTORE_UPDATE_URL, request, String.class);
+	}
 
 }
