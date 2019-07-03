@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: kik_get_route
+        uri: http://localhost:8085
+        predicates: 
+        - Path=/api/kik/v1/{r}
+        - Method=GET
+        filters:
+        - RewritePath=/api/kik/v1/(?<r>.*), /api/get/kvalitetsindikatorer/kik-v1-$\{r}
+      - id: kik_post_route
+        uri: http://localhost:8085
+        predicates: 
+        - Path=/api/kik/v1/{r}
+        - Method=POST
+        filters:
+        - RewritePath=/api/kik/v1/(?<r>.*), /api/save
+        

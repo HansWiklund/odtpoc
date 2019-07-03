@@ -12,6 +12,7 @@
     <modules>
         <module>core</module>
         <module>application</module>
+        <module>proxy</module>
         <module>mock-adapter</module>
         <module>mock-producer</module>
     </modules>
