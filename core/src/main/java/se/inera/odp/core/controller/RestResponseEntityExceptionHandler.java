@@ -27,17 +27,18 @@ import se.inera.odp.core.exception.*;
 @RestControllerAdvice
 @RestController
 public class RestResponseEntityExceptionHandler {
- 
-    @ExceptionHandler(value = { ODPException.class })
-    protected ResponseEntity<Object> handleODPException(RuntimeException ex, WebRequest request) {
-    	Map<String, Object>  bodyOfResponse = message(HttpStatus.NOT_FOUND, ex.getMessage(), getUri(request));
-        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
-    }
+
     
     @ExceptionHandler(value = { ODPAuthorizationException.class })
     protected ResponseEntity<Object> handleODPAuthorizationException(RuntimeException ex, WebRequest request) {
-        Map<String, Object> bodyOfResponse = message(HttpStatus.FORBIDDEN, "Behörighet saknas.", getUri(request));
+        Map<String, Object> bodyOfResponse = message(HttpStatus.FORBIDDEN, ex.getMessage(), getUri(request));
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.FORBIDDEN, request);
+    }
+
+    @ExceptionHandler(value = { ODPException.class })
+    protected ResponseEntity<Object> handleODPException(ODPException ex, WebRequest request) {
+    	Map<String, Object>  bodyOfResponse = message(ex.getStatus(), ex.getMessage(), getUri(request));
+        return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), ex.getStatus(), request);
     }
     
     @ExceptionHandler(value = { HttpStatusCodeException.class, HttpServerErrorException.class, HttpClientErrorException.class})
@@ -83,6 +84,20 @@ public class RestResponseEntityExceptionHandler {
     	return response;
     }
 
+    private Map<String, Object> message2(HttpStatus errCode, String msg, String url ) {
+    	
+    	LocalDateTime localDate = LocalDateTime.now();
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", localDate);
+        response.put("path", url);
+        response.put("status", errCode.value());
+        response.put("error", errCode.getReasonPhrase());
+        response.put("message", msg);
+
+    	return response;
+    }
+    
     private String message(HttpStatus errCode, String msg ) {
 
     	return String.format("{\n   \"code\" : \"%s\",\n   \"description\" : \"%s\"\n}", errCode, msg);

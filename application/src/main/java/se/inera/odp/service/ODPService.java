@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
 import se.inera.odp.core.exception.ODPException;
+import se.inera.odp.core.exception.ODPNotFoundException;
 import se.inera.odp.core.request.CKANResponse;
 import se.inera.odp.core.request.CKANResult;
 import se.inera.odp.core.request.LinkType;
@@ -51,52 +53,40 @@ public class ODPService {
 
 	@Autowired
 	ObjectMapper mapper;
+	
+	@Value("${app.server.url]")
+	String serverUrl;
 
-	@SuppressWarnings("unchecked")
-	public String getResourceById(String dataset_id, String resource_id, Map<String, String> params, String auth) {
-		ResponseEntity<String> result;
+	public String getResourceById(String dataset_id, String resource_name, Map<String, String> params, String auth) {
 		
-		try {
-			result = ckanClient.getResource(auth, dataset_id);
-	
-			// Extrakt id of result set
-			Map<String, ?> resultMap = createResultAsMap(result.getBody());
-			List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");
+		String resourceId = fetchResourceId(auth, dataset_id, resource_name);
+
+		// Get result set
+		computeQuery(params);
+		ResponseEntity<CKANResponse> response = ckanClient.getData(auth, resourceId, params, CKANResponse.class);
 		
-			Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_id.equals(r.get("name"))).findFirst();
-			
-			String resourceId = null;
-			if(resource.isPresent())
-				resourceId = resource.get().get("id");
-			else
-				throw new ODPException("Resource " + resource_id + " does not exist");
-	
-			// Get result set
-			computeQuery(params);
-			ResponseEntity<CKANResponse> response = ckanClient.getData(auth, resourceId, params, CKANResponse.class);
-			
-			CKANResponse ckanResponse = response.getBody();
-			CKANResult ckanResult = ckanResponse.getResult();
-			
-			List<Map<String, ?>> ckanRecords = ckanResult.getRecords();
-			
-			for(Map<String, ?> rec : ckanRecords) {
-				rec.remove("_id");
-			}
-			
-		if(ckanResult.getTotal() == ckanRecords.size()) {
+		CKANResponse ckanResponse = response.getBody();
+		CKANResult ckanResult = ckanResponse.getResult();
+		
+		List<Map<String, ?>> ckanRecords = ckanResult.getRecords();
+		
+		for(Map<String, ?> rec : ckanRecords) {
+			rec.remove("_id");
+		}
+		
+		try {		
+			if(ckanResult.getTotal() == ckanRecords.size()) {
 				return mapper.writeValueAsString(ckanRecords);				
 			} else {			
 				ODPResponse odpResponse = new ODPResponse();
 				odpResponse.setRecords(ckanRecords);
-				reformatLinks(ckanResult.getLinks(), dataset_id, resource_id);
+				reformatLinks(ckanResult.getLinks(), dataset_id, resource_name);
 				odpResponse.setLinks(ckanResult.getLinks());
 				odpResponse.setOffset(ckanResult.getOffset());
 				odpResponse.setLimit(ckanResult.getLimit());
 				odpResponse.setTotal(ckanResult.getTotal());
 				return mapper.writeValueAsString(odpResponse);
-			}
-						
+			}						
 		} catch (IOException e) {
 			throw new ODPException("IOException : " + e.getMessage());
 		}
@@ -130,26 +120,16 @@ public class ODPService {
 			prevOffset = prev.substring(startIndex, endIndex);
 		}
 		
-		// Hårdkodad url. Skall sättas i application.properties innan produktion.
-		String url = "localhost:8085";
-		
-		lt.setStart(url + "/api/get/" + dataset + "/" + resource);
+		lt.setStart(serverUrl + "/api/get/" + dataset + "/" + resource);
 		if (next != null)
-			lt.setNext(url + "/api/get/" + dataset + "/" + resource + "?limit=" + nextLimit + "&offset=" + nextOffset);
+			lt.setNext(serverUrl + "/api/get/" + dataset + "/" + resource + "?limit=" + nextLimit + "&offset=" + nextOffset);
 		else 
 			lt.setNext(null);
 		if (prev != null)
-			lt.setPrev(url + "/api/get/" + dataset + "/" + resource + "?limit=" + prevLimit + "&offset=" + prevOffset);
+			lt.setPrev(serverUrl + "/api/get/" + dataset + "/" + resource + "?limit=" + prevLimit + "&offset=" + prevOffset);
 		else
 			lt.setPrev(null);
 	}
-
-	@SuppressWarnings("unchecked")
-	private Map<String, ?> createResultAsMap(String value) throws IOException {
-		Map<String, Object> map = mapper.readValue(value, Map.class);
-		return (Map<String, Object>)map.get("result");
-	}
-	
 
 	@SuppressWarnings("unchecked")
 	public void createResource(String auth, String data) {
@@ -188,59 +168,75 @@ public class ODPService {
 		}
 	}
 	
-	private void computeQuery(Map<String, String> params) throws IOException {
+	public void deleteResource(String auth, String dataset_id, String resource_name) throws IOException {
+		String resourceId = fetchResourceId(auth, dataset_id, resource_name);
+		ckanClient.deleteResource(auth, resourceId);
+	}
+
+	public void updateResource(String auth, String dataset_id, String resource_name, String data) {
 		
-		Map<String, String> filters = new HashMap<>();
-		
-		Iterator<Map.Entry<String,String>> iter = params.entrySet().iterator();
-		while (iter.hasNext()) {
-		    Map.Entry<String,String> entry = iter.next();
-			if(uparams.contains(entry.getKey())) {
-		        iter.remove();		    
-			} else if(!qparams.contains(entry.getKey())) {
-				filters.put(entry.getKey(), entry.getValue());
-		        iter.remove();
+		String resourceId = fetchResourceId(auth, dataset_id, resource_name);
+			
+		StringBuilder strBldr = new StringBuilder();
+		strBldr.append("{\"resource_id\": \"" + resourceId + "\", \"force\": true, ");
+		int recordsIndex = data.indexOf("\"records\"");
+		int lastIndexOfCurlyBrace = data.lastIndexOf("}");
+		strBldr.append(data.substring(recordsIndex, lastIndexOfCurlyBrace));
+		strBldr.append(", \"method\" : \"upsert\" }");
+		ckanClient.updateResource(auth, strBldr.toString());
+	}
+
+	/*
+	 * Private methods
+	 */
+	
+	private void computeQuery(Map<String, String> params) {
+		try {
+			Map<String, String> filters = new HashMap<>();
+			
+			Iterator<Map.Entry<String,String>> iter = params.entrySet().iterator();
+			while (iter.hasNext()) {
+			    Map.Entry<String,String> entry = iter.next();
+				if(uparams.contains(entry.getKey())) {
+			        iter.remove();		    
+				} else if(!qparams.contains(entry.getKey())) {
+					filters.put(entry.getKey(), entry.getValue());
+			        iter.remove();
+				}
 			}
+			
+			if(filters.size()>0)
+				params.put("filters", mapper.writeValueAsString(filters));
+			
+		} catch (IOException e) {
+			throw new ODPException("IOException : " + e.getMessage());
 		}
-		
-		if(filters.size()>0)
-			params.put("filters", mapper.writeValueAsString(filters));
 	}
 	
 	@SuppressWarnings("unchecked")
-	public boolean deleteResource(String auth, String dataset_id, String resource_id) throws IOException {
-		ResponseEntity<String> result = ckanClient.getResource(auth, dataset_id);
-		Map<String, ?> resultMap = createResultAsMap(result.getBody());
-		List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");
-		Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_id.equals(r.get("name"))).findFirst();
-		Map<String, String> resourceMap = resource.get();
-		String resourceName =  resourceMap.get("name");
-		if (resourceName.equals(resource_id)) {
-			ckanClient.deleteResource(auth, resourceMap.get("id"));
-			return true;
-		}			
-		return false;
+	private Map<String, ?> createResultAsMap(String value) throws IOException {
+		Map<String, Object> map = mapper.readValue(value, Map.class);
+		return (Map<String, Object>)map.get("result");
 	}
 
 	@SuppressWarnings("unchecked")
-	public boolean updateResource(String auth, String dataset_id, String resource_id, String data) throws IOException {
-		ResponseEntity<String> result = ckanClient.getResource(auth, dataset_id);
-		Map<String, ?> resultMap = createResultAsMap(result.getBody());				
-		List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");		
-		Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_id.equals(r.get("name"))).findFirst();
-		Map<String, String> resourceMap = resource.get();
-		String resourceName =  resourceMap.get("name");		
-		if (resourceName.equals(resource_id)) {			
-			StringBuilder strBldr = new StringBuilder();
-			strBldr.append("{\"resource_id\": \"" + resourceMap.get("id") + "\", \"force\": true, ");
-			int recordsIndex = data.indexOf("\"records\"");
-			int lastIndexOfCurlyBrace = data.lastIndexOf("}");
-			strBldr.append(data.substring(recordsIndex, lastIndexOfCurlyBrace));
-			strBldr.append(", \"method\" : \"upsert\" }");
-			ckanClient.updateResource(auth, strBldr.toString());
-			return true;
-		}			
-		return false;
-	}
+	private String fetchResourceId(String auth, String dataset_id, String resource_name) {
+
+		try {
+			ResponseEntity<String> result = ckanClient.getResource(auth, dataset_id);
+			Map<String, ?> resultMap = createResultAsMap(result.getBody());
+			List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");		
+			Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_name.equals(r.get("name"))).findFirst();
 	
+			if(!resource.isPresent())
+				throw new ODPNotFoundException("Resursen " + resource_name + " saknas!");
+			
+			Map<String, String> resourceMap = resource.get();
+			
+			return resourceMap.get("id");
+			
+		} catch(IOException e) {
+			throw new ODPException("IOException : " + e.getMessage());			
+		}
+	}
 }
