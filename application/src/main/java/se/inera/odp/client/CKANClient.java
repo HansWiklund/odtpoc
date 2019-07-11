@@ -89,31 +89,31 @@ public class CKANClient {
 		return restTemplate.exchange(CKAN_RESOURCE_SEARCH_URL + hashName, HttpMethod.GET, request, String.class);	
 	}
 
-	public void createResource(String auth, String data) {
+	public ResponseEntity<String> createResource(String auth, String data) {
 		
 		HttpEntity<String> request = new HttpEntity<String>(data, createHeaders(auth));
 
-		restTemplate.postForObject(CKAN_DATASTORE_CREATE_URL, request, HttpEntity.class);
+		return restTemplate.exchange(CKAN_DATASTORE_CREATE_URL, HttpMethod.POST, request, String.class);
 	}
 	
 	public void updateResource(String data) {
 		restTemplate.postForEntity(CKAN_DATASTORE_UPDATE_URL, data, String.class);
 	}
 
-	public void deleteResource(String auth, String id) {
+	public ResponseEntity<String> deleteResource(String auth, String id) {
 		
 		String resourceToDelete = "{\"id\":\"" + id + "\"}";
 		
 		HttpEntity<?> request = new HttpEntity<String>(resourceToDelete, createHeaders(auth));
 		
-		restTemplate.postForObject(CKAN_RESOURCE_DELETE_URL, request, String.class);
+		return restTemplate.exchange(CKAN_RESOURCE_DELETE_URL, HttpMethod.POST, request, String.class);
 	}
 	
-	public void updateResource(String auth, String data) {
+	public ResponseEntity<String> updateResource(String auth, String data) {
 		
 		HttpEntity<?> request = new HttpEntity<String>(data, createHeaders(auth));
 		
-		restTemplate.postForObject(CKAN_DATASTORE_UPDATE_URL, request, String.class);
+		return restTemplate.exchange(CKAN_DATASTORE_UPDATE_URL, HttpMethod.POST, request, String.class);
 	}
 
 }

@@ -7,12 +7,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import se.inera.odp.client.CKANClient;
@@ -132,7 +135,7 @@ public class ODPService {
 	}
 
 	@SuppressWarnings("unchecked")
-	public void createResource(String auth, String data) {
+	public String createResource(String auth, String data) {
 		try {
 			// Kör en resource_search
 			Map<String, Object> map = mapper.readValue(data, Map.class);
@@ -153,27 +156,39 @@ public class ODPService {
 				String oldResourceId = resultsMap.get("id");
 				
 				// Lägg till ny resurs
-				ckanClient.createResource(auth, data);
-				
+				ResponseEntity<String> response = ckanClient.createResource(auth, data);
+				Map<String, ?> resultMap = mapper.readValue(response.getBody(), Map.class);
+				resultMap.remove("help");
+				resultMap.remove("result");
+			
 				// Ta bort gammal resurs
 				ckanClient.deleteResource(auth, oldResourceId);
+				return mapper.writeValueAsString(resultMap);
 			}
 			else 
 			{
 				// Lägg till ny resurs
-				ckanClient.createResource(auth, data);
+				ResponseEntity<String> response = ckanClient.createResource(auth, data);
+				Map<String, ?> resultMap = mapper.readValue(response.getBody(), Map.class);
+				resultMap.remove("help");
+				resultMap.remove("result");
+				return mapper.writeValueAsString(resultMap);
 			}
 		} catch(IOException e) {
 			throw new ODPException("IOException : " + e.getMessage());			
 		}
 	}
 	
-	public void deleteResource(String auth, String dataset_id, String resource_name) throws IOException {
+	public String deleteResource(String auth, String dataset_id, String resource_name) throws IOException {
 		String resourceId = fetchResourceId(auth, dataset_id, resource_name);
-		ckanClient.deleteResource(auth, resourceId);
+		ResponseEntity<String> response = ckanClient.deleteResource(auth, resourceId);
+		Map<String, ?> map = mapper.readValue(response.getBody(), Map.class);
+		map.remove("result");
+		map.remove("help");
+		return mapper.writeValueAsString(map);
 	}
 
-	public void updateResource(String auth, String dataset_id, String resource_name, String data) {
+	public String updateResource(String auth, String dataset_id, String resource_name, String data) throws JsonParseException, JsonMappingException, IOException {
 		
 		String resourceId = fetchResourceId(auth, dataset_id, resource_name);
 			
@@ -183,7 +198,13 @@ public class ODPService {
 		int lastIndexOfCurlyBrace = data.lastIndexOf("}");
 		strBldr.append(data.substring(recordsIndex, lastIndexOfCurlyBrace));
 		strBldr.append(", \"method\" : \"upsert\" }");
-		ckanClient.updateResource(auth, strBldr.toString());
+		ResponseEntity<String> response = ckanClient.updateResource(auth, strBldr.toString());
+		Map<String, ?> map = mapper.readValue(response.getBody(), Map.class);
+		map.remove("help");
+		map.remove("method");
+		map.remove("resource_id");
+		map.remove("result");
+		return mapper.writeValueAsString(map);
 	}
 
 	/*

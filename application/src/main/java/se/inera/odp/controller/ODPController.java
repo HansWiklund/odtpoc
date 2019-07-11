@@ -28,7 +28,7 @@ public class ODPController {
 			@RequestHeader(value="Authorization", required=false ) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestParam Map<String,String> params) {
-
+			
 		String result = ckanService.getResourceById(dataset_id, resource_id, params, auth);
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
@@ -41,9 +41,9 @@ public class ODPController {
 		if(auth == null)
 			throw new ODPAuthorizationException();
 			
-		ckanService.createResource(auth, data);
+		String result = ckanService.createResource(auth, data);
 		logger.info("Resource was succesfully saved!");
-		return new ResponseEntity<String>(HttpStatus.CREATED);
+		return new ResponseEntity<String>(result, HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/ping")
@@ -52,24 +52,24 @@ public class ODPController {
 	}	
 	
 	@DeleteMapping("/delete/{dataset_id}/{resource_id}")
-	public ResponseEntity<?> deleteResource(
+	public ResponseEntity<String> deleteResource(
 			@RequestHeader(value="Authorization") String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id) throws IOException {
 
-		ckanService.deleteResource(auth, dataset_id, resource_id);
+		String response = ckanService.deleteResource(auth, dataset_id, resource_id);
 		logger.info("Resource was succesfully deleted!");
-		return new ResponseEntity<String>(HttpStatus.OK);
+		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 	
 	@PutMapping("/update/{dataset_id}/{resource_id}")
-	public ResponseEntity<?> updateResource(
+	public ResponseEntity<String> updateResource(
 			@RequestHeader(value="Authorization") String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestBody String data) throws IOException {
 
-		ckanService.updateResource(auth, dataset_id, resource_id, data);
+		String response = ckanService.updateResource(auth, dataset_id, resource_id, data);
 		logger.info("Resource was succesfully updated!");
-		return new ResponseEntity<String>(HttpStatus.OK);
+		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 	
 }

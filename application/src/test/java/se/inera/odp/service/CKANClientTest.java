@@ -5,14 +5,28 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ODPServiceTest {
+public class CKANClientTest {
 
+	/*
+	 * Mocka restTemplate
+	 */
+	
 	@Before
 	public void setUp() throws Exception {
 	}
 
 	@Test
-	public void testGetResourceById() {
+	public void testGetResource() {
+//		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetData() {
+//		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetResourceForId() {
 //		fail("Not yet implemented");
 	}
 
@@ -22,12 +36,17 @@ public class ODPServiceTest {
 	}
 
 	@Test
+	public void testUpdateResourceString() {
+//		fail("Not yet implemented");
+	}
+
+	@Test
 	public void testDeleteResource() {
 //		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testUpdateResource() {
+	public void testUpdateResourceStringString() {
 //		fail("Not yet implemented");
 	}
 
