@@ -5,10 +5,62 @@
 
     <groupId>se.inera.pfod</groupId>
     <artifactId>odp-main</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>odp-main</name>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <swagger.version>2.9.2</swagger.version>
+        <logstash.encoder.version>6.1</logstash.encoder.version>
+    </properties>
+    
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+			    <groupId>net.logstash.logback</groupId>
+			    <artifactId>logstash-logback-encoder</artifactId>
+			    <version>${logstash.encoder.version}</version>
+			</dependency>
+			<!-- Your project must also directly depend on either logback-classic or logback-access.  For example: -->
+			<dependency>
+			    <groupId>ch.qos.logback</groupId>
+			    <artifactId>logback-classic</artifactId>
+			    <version>1.2.3</version>
+			</dependency>	
+
+	        <dependency>
+	            <groupId>se.inera.pfod</groupId>
+	            <artifactId>odp-core</artifactId>
+	            <version>${project.version}</version>
+	        </dependency>
+	        <dependency>
+	            <groupId>io.springfox</groupId>
+	            <artifactId>springfox-swagger2</artifactId>
+	            <version>${swagger.version}</version>
+	        </dependency>
+			<dependency>
+			    <groupId>io.springfox</groupId>
+			    <artifactId>springfox-swagger-ui</artifactId>
+			    <version>${swagger.version}</version>
+			</dependency>  
+			
+			<dependency>
+			    <groupId>org.springframework.cloud</groupId>
+			    <artifactId>spring-cloud-starter-gateway</artifactId>
+			    <version>2.1.2.RELEASE</version>
+			</dependency>   
+		
+		</dependencies>
+	</dependencyManagement>
     <modules>
         <module>core</module>
         <module>application</module>
