@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import se.inera.odp.core.exception.ODPAuthorizationException;
 import se.inera.odp.service.ODPService;
 
+import static net.logstash.logback.argument.StructuredArguments.*;
+
 // @RequestMapping(value = "/greeting", method = POST, consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 
 @RestController
@@ -20,12 +22,14 @@ public class ODPController {
 
 	Logger logger = LoggerFactory.getLogger(ODPController.class);
 
+	private static final String AUTHORIZATION = "Authorization";
+	
 	@Autowired
 	ODPService ckanService;
 	
 	@GetMapping("/get/{dataset_id}/{resource_id}")
 	public ResponseEntity<String> getResourceById(
-			@RequestHeader(value="Authorization", required=false ) String auth, 
+			@RequestHeader(value=AUTHORIZATION, required=false ) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestParam Map<String,String> params) {
 			
@@ -35,7 +39,7 @@ public class ODPController {
 	
 	@PostMapping(value="/save")
 	public ResponseEntity<String> createResource(
-			@RequestHeader(value="Authorization", required=false ) String auth, 
+			@RequestHeader(value=AUTHORIZATION, required=false ) String auth, 
 			@RequestBody String data) {
  
 		if(auth == null)
@@ -48,12 +52,13 @@ public class ODPController {
 	
 	@GetMapping("/ping")
 	public ResponseEntity<String> getPingResponse() {
+		logger.info("log message {}", keyValue("name", "value"));
 		return new ResponseEntity<String>("OK", HttpStatus.OK);
 	}	
 	
 	@DeleteMapping("/delete/{dataset_id}/{resource_id}")
 	public ResponseEntity<String> deleteResource(
-			@RequestHeader(value="Authorization") String auth, 
+			@RequestHeader(value=AUTHORIZATION) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id) throws IOException {
 
 		String response = ckanService.deleteResource(auth, dataset_id, resource_id);
@@ -63,7 +68,7 @@ public class ODPController {
 	
 	@PutMapping("/update/{dataset_id}/{resource_id}")
 	public ResponseEntity<String> updateResource(
-			@RequestHeader(value="Authorization") String auth, 
+			@RequestHeader(value=AUTHORIZATION) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestBody String data) throws IOException {
 

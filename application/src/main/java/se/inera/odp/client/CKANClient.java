@@ -50,14 +50,13 @@ public class CKANClient {
 	@Autowired
 	RestTemplate restTemplate;
 
-	// TODO
-	public ResponseEntity<String> getResource(String auth, String id) {
+	public <T> ResponseEntity<T> getResource(String auth, String id, Class<T> clazz) {
 		if(id == null)
 			return null;
 
 		HttpEntity<String> request = new HttpEntity<String>(createHeaders(auth));
 		
-		return restTemplate.exchange(CKAN_PACKAGE_SHOW_URL, HttpMethod.GET, request, String.class, id, CKAN_DATASTORE_SEARCH_LIMIT);
+		return restTemplate.exchange(CKAN_PACKAGE_SHOW_URL, HttpMethod.GET, request, clazz, id, CKAN_DATASTORE_SEARCH_LIMIT);
 	}
 
 	public <T> ResponseEntity<T> getData(String auth, String id, Map<String, String> params, Class<T> clazz) {
@@ -86,7 +85,7 @@ public class CKANClient {
 		if(hashName == null)
 			return null;
 		HttpEntity<String> request = new HttpEntity<String>(createHeaders(auth));
-		return restTemplate.exchange(CKAN_RESOURCE_SEARCH_URL + hashName, HttpMethod.GET, request, String.class);	
+		return restTemplate.exchange(CKAN_RESOURCE_SEARCH_URL + hashName, HttpMethod.GET, request, String.class);
 	}
 
 	public ResponseEntity<String> createResource(String auth, String data) {

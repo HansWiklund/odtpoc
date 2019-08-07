@@ -1,11 +1,15 @@
 package se.inera.odp.core.controller;
 
+import static net.logstash.logback.argument.StructuredArguments.keyValue;
+
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +32,7 @@ import se.inera.odp.core.exception.*;
 @RestController
 public class RestResponseEntityExceptionHandler {
 
+	Logger logger = LoggerFactory.getLogger(RestResponseEntityExceptionHandler.class);
     
     @ExceptionHandler(value = { ODPAuthorizationException.class })
     protected ResponseEntity<Object> handleODPAuthorizationException(RuntimeException ex, WebRequest request) {
@@ -37,7 +42,7 @@ public class RestResponseEntityExceptionHandler {
 
     @ExceptionHandler(value = { ODPException.class })
     protected ResponseEntity<Object> handleODPException(ODPException ex, WebRequest request) {
-    	Map<String, Object>  bodyOfResponse = message(ex.getStatus(), ex.getMessage(), getUri(request));
+    	Map<String, Object>  bodyOfResponse = message(ex.getStatus(), ex.getMessage(), getUri(request), ex.getErrCode());
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), ex.getStatus(), request);
     }
     
@@ -70,37 +75,26 @@ public class RestResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 
-    private Map<String, Object> message(HttpStatus errCode, String msg, String url ) {
-    	
-    	LocalDateTime localDate = LocalDateTime.now();
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("timestamp", localDate);
-        response.put("status", errCode.value());
-        response.put("error", errCode.getReasonPhrase());
-        response.put("message", msg);
-        response.put("path", url);
-
-    	return response;
-    }
-
-    private Map<String, Object> message2(HttpStatus errCode, String msg, String url ) {
-    	
-    	LocalDateTime localDate = LocalDateTime.now();
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("timestamp", localDate);
-        response.put("path", url);
-        response.put("status", errCode.value());
-        response.put("error", errCode.getReasonPhrase());
-        response.put("message", msg);
-
-    	return response;
+    private Map<String, Object> message(HttpStatus status, String msg, String url ) {
+    	return message(status, msg, url, null);
     }
     
-    private String message(HttpStatus errCode, String msg ) {
+    private Map<String, Object> message(HttpStatus status, String msg, String url, String errCode ) {
+    	
+    	LocalDateTime localDate = LocalDateTime.now();
 
-    	return String.format("{\n   \"code\" : \"%s\",\n   \"description\" : \"%s\"\n}", errCode, msg);
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", localDate.toString());
+        response.put("status", status.value());
+        response.put("error", status.getReasonPhrase());
+        if(errCode != null)
+        	response.put("error_code", errCode);
+        response.put("message", msg);
+        response.put("path", url);
+
+		logger.info("exception", keyValue("exception", response));
+
+    	return response;
     }
 
     private String getUri(WebRequest request) {
