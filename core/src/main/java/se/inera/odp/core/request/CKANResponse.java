@@ -5,6 +5,7 @@ public class CKANResponse {
 	private String help;
 	private Boolean success;
 	private CKANResult result;
+	private CKANError error;
 	
 	public String getHelp() {
 		return help;
@@ -24,5 +25,10 @@ public class CKANResponse {
 	public void setResult(CKANResult result) {
 		this.result = result;
 	}
-	
+	public CKANError getError() {
+		return error;
+	}
+	public void setError(CKANError error) {
+		this.error = error;
+	}
 }
