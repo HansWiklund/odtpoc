@@ -60,7 +60,7 @@ public class ODPService {
 	@Autowired
 	ObjectMapper mapper;
 	
-	@Value("${app.server.url]")
+	@Value("${app.server.url}")
 	String serverUrl;
 
 	public String getResourceById(String dataset_id, String resource_name, Map<String, String> params, String auth) {
