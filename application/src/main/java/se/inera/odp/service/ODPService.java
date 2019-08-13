@@ -57,11 +57,17 @@ public class ODPService {
 	@Autowired
 	CKANClient ckanClient;
 
-	@Autowired
+//	@Autowired
 	ObjectMapper mapper;
 	
 	@Value("${app.server.url}")
 	String serverUrl;
+	
+	@Autowired
+	public void setMapper(ObjectMapper mapper){
+		this.mapper = mapper;
+	}
+
 
 	public String getResourceById(String dataset_id, String resource_name, Map<String, String> params, String auth) {
 		
@@ -153,7 +159,6 @@ public class ODPService {
 			Map<String, Object> map = mapper.readValue(data, Map.class);
 			Map<String, Object> innerMap = (Map<String, Object>)map.get("resource");
 			String hashName = (String)innerMap.get("hash");
-			
 			ResponseEntity<String> result = null;
 			try {
 				result = ckanClient.getResourceForId(auth, hashName);
@@ -175,7 +180,7 @@ public class ODPService {
 				// Lägg till ny resurs
 				ResponseEntity<String> response = null;
 				try {
-					response = ckanClient.createResource(auth, data);					
+					response = ckanClient.createResource(auth, data);
 				} catch (RuntimeException e) {
 					throw new ODPException(createStatus(response), e.getMessage(), ERROR_CODE_CKAN_DATASTORE_CREATE);			
 				}			
@@ -309,7 +314,7 @@ public class ODPService {
 			throw new ODPException(e.getStatusCode(), e.getMessage(), ERROR_CODE_CKAN_PACKAGE_SHOW);					
 		} catch (RuntimeException e) {
 			throw new ODPException(createStatus(result), e.getMessage(), ERROR_CODE_CKAN_PACKAGE_SHOW);			
-		}			
+		}
 		Map<String, ?> resultMap = createResultAsMap(result.getBody());
 		List<Map<String, String>> resourceList = (List<Map<String, String>>)resultMap.get("resources");		
 		Optional<Map<String, String>> resource = resourceList.stream().filter(r -> resource_name.equals(r.get("name"))).findFirst();
