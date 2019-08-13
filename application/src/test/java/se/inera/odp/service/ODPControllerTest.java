@@ -8,15 +8,19 @@ import java.io.IOException;
 import java.util.HashMap;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import se.inera.odp.controller.ODPController;
 import se.inera.odp.core.exception.ODPAuthorizationException;
+import se.inera.odp.core.utils.ResponseLoggerMapper;
 
+@RunWith(SpringRunner.class)
 public class ODPControllerTest {
 	
 	@InjectMocks
@@ -24,6 +28,9 @@ public class ODPControllerTest {
 	
 	@Mock
 	private ODPService odpService;
+
+	@Mock
+	private ResponseLoggerMapper responseMapper;
 
 	@Before
 	public void setUp() throws Exception {

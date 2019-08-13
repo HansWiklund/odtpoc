@@ -10,9 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import se.inera.odp.core.exception.ODPAuthorizationException;
+import se.inera.odp.core.utils.ResponseLoggerMapper;
 import se.inera.odp.service.ODPService;
-
-import static net.logstash.logback.argument.StructuredArguments.*;
 
 // @RequestMapping(value = "/greeting", method = POST, consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 
@@ -25,15 +24,20 @@ public class ODPController {
 	private static final String AUTHORIZATION = "Authorization";
 	
 	@Autowired
-	ODPService ckanService;
-	
+	private ODPService ckanService;
+
+	@Autowired
+	private ResponseLoggerMapper responseMapper;
+
 	@GetMapping("/get/{dataset_id}/{resource_id}")
 	public ResponseEntity<String> getResourceById(
 			@RequestHeader(value=AUTHORIZATION, required=false ) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestParam Map<String,String> params) {
-			
+		
+		String url = "/api/get/" + dataset_id + "/" + resource_id;
 		String result = ckanService.getResourceById(dataset_id, resource_id, params, auth);
+		responseMapper.responseMessage(HttpStatus.OK, "OK", url);
 		return new ResponseEntity<String>(result, HttpStatus.OK);
 	}
 	
@@ -45,14 +49,14 @@ public class ODPController {
 		if(auth == null)
 			throw new ODPAuthorizationException();
 			
+		String url = "/api/get/save";
 		String result = ckanService.createResource(auth, data);
-		logger.info("Resource was succesfully saved!");
+		responseMapper.responseMessage(HttpStatus.OK, "OK", url);
 		return new ResponseEntity<String>(result, HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/ping")
 	public ResponseEntity<String> getPingResponse() {
-		logger.info("log message {}", keyValue("name", "value"));
 		return new ResponseEntity<String>("OK", HttpStatus.OK);
 	}	
 	
@@ -61,8 +65,9 @@ public class ODPController {
 			@RequestHeader(value=AUTHORIZATION) String auth, 
 			@PathVariable String dataset_id, @PathVariable String resource_id) throws IOException {
 
+		String url = "/api/delete/" + dataset_id + "/" + resource_id;
 		String response = ckanService.deleteResource(auth, dataset_id, resource_id);
-		logger.info("Resource was succesfully deleted!");
+		responseMapper.responseMessage(HttpStatus.OK, "OK", url);
 		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 	
@@ -72,8 +77,9 @@ public class ODPController {
 			@PathVariable String dataset_id, @PathVariable String resource_id,
 			@RequestBody String data) throws IOException {
 
+		String url = "/api/update/" + dataset_id + "/" + resource_id;
 		String response = ckanService.updateResource(auth, dataset_id, resource_id, data);
-		logger.info("Resource was succesfully updated!");
+		responseMapper.responseMessage(HttpStatus.OK, "OK", url);
 		return new ResponseEntity<String>(response, HttpStatus.OK);
 	}
 	
