@@ -22,7 +22,7 @@ public class ResponseLoggerMapper {
     	return errorMessage(status, msg, url, null);
     }
     
-    public Map<String, Object> errorMessage(HttpStatus status, String msg, String url, String errCode ) {
+    public Map<String, Object> errorMessage(HttpStatus status, String msg, String uri, String errCode ) {
     	
     	LocalDateTime localDate = LocalDateTime.now();
 
@@ -33,19 +33,19 @@ public class ResponseLoggerMapper {
         if(errCode != null)
         	response.put("error_code", errCode);
         response.put("message", msg);
-        response.put("path", url);
+        response.put("endpoint", uri);
 
 		logger.info("exception", keyValue("exception", response));
 
     	return response;
     }
 
-    public Map<String, Object> responseMessage(HttpStatus status, String msg, String url ) {
+    public Map<String, Object> responseMessage(HttpStatus status, String msg, String uri ) {
     	
         Map<String, Object> response = new HashMap<>();
         response.put("status", status.value());
         response.put("message", msg);
-        response.put("path", url);
+        response.put("endpoint", uri);
 
 		logger.info("response", keyValue("response", response));
 
